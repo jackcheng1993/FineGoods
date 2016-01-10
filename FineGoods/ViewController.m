@@ -18,6 +18,7 @@
     [super viewDidLoad];
     NSLog(@"test data");
     NSLog(@"caiyu");
+    NSLog(@"Aili");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
