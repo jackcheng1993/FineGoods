@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"test data");
+    NSLog(@"caiyu");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
