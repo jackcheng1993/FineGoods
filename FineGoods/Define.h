@@ -15,13 +15,13 @@
 #define  FScreenHeight [UIScreen mainScreen].bounds.size.height
 
 #pragma mark - 第三方库
-
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
 #import "Masonry.h"  //约束
 #import "HYBLoopScrollView.h" //滚动视图
 
-
+#pragma mark - 页面类型
+#define FHomePage @"homePage"
 
 #endif /* Define_h */

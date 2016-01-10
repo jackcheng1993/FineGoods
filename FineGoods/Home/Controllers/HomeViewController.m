@@ -9,7 +9,10 @@
 #import "HomeViewController.h"
 #import "Define.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    
+    UITableView *_tableView;
+}
 
 @end
 
@@ -18,7 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
+    
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+    }];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -30,6 +30,8 @@
 		BC43FCED1C424CEE00582D15 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FCEC1C424CEE00582D15 /* UserViewController.m */; };
 		BC43FCF01C424D3C00582D15 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FCEF1C424D3C00582D15 /* PhotoViewController.m */; };
 		BC43FCF31C424F3E00582D15 /* controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC43FCF21C424F3E00582D15 /* controllers.plist */; };
+		BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD071C428C0100582D15 /* NetWorkingManager.m */; };
+		BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD0A1C429BB700582D15 /* FAppModel.m */; };
 		BCD9A6F21C412C2A0040A19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F11C412C2A0040A19C /* main.m */; };
 		BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F41C412C2B0040A19C /* AppDelegate.m */; };
 		BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F71C412C2B0040A19C /* ViewController.m */; };
@@ -138,6 +140,10 @@
 		BC43FCEE1C424D3C00582D15 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoViewController.h; path = Photo/PhotoViewController.h; sourceTree = "<group>"; };
 		BC43FCEF1C424D3C00582D15 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewController.m; path = Photo/PhotoViewController.m; sourceTree = "<group>"; };
 		BC43FCF21C424F3E00582D15 /* controllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = controllers.plist; sourceTree = "<group>"; };
+		BC43FD061C428C0100582D15 /* NetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkingManager.h; sourceTree = "<group>"; };
+		BC43FD071C428C0100582D15 /* NetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkingManager.m; sourceTree = "<group>"; };
+		BC43FD091C429BB700582D15 /* FAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAppModel.h; sourceTree = "<group>"; };
+		BC43FD0A1C429BB700582D15 /* FAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAppModel.m; sourceTree = "<group>"; };
 		BCD9A6ED1C412C290040A19C /* FineGoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FineGoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9A6F11C412C2A0040A19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD9A6F31C412C2B0040A19C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 		BC43FC921C420CDB00582D15 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				BC43FD051C428C0100582D15 /* Manager */,
 				BC43FC961C420DE000582D15 /* Controllers */,
 				BC43FC971C420DE000582D15 /* Models */,
 				BC43FC981C420DE000582D15 /* Views */,
@@ -333,6 +340,8 @@
 		BC43FC971C420DE000582D15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC43FD091C429BB700582D15 /* FAppModel.h */,
+				BC43FD0A1C429BB700582D15 /* FAppModel.m */,
 			);
 			name = Models;
 			path = Home/Models;
@@ -499,6 +508,16 @@
 				BC43FCEF1C424D3C00582D15 /* PhotoViewController.m */,
 			);
 			name = "选图";
+			sourceTree = "<group>";
+		};
+		BC43FD051C428C0100582D15 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FD061C428C0100582D15 /* NetWorkingManager.h */,
+				BC43FD071C428C0100582D15 /* NetWorkingManager.m */,
+			);
+			name = Manager;
+			path = Home/Manager;
 			sourceTree = "<group>";
 		};
 		BCD9A6E41C412C260040A19C = {
@@ -855,6 +874,7 @@
 				BC43FCD01C42485000582D15 /* MASCompositeConstraint.m in Sources */,
 				BC43FCCE1C42485000582D15 /* UIView+HYBUIViewCommon.m in Sources */,
 				BC43FCEA1C424CE300582D15 /* MessageViewController.m in Sources */,
+				BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */,
 				BC43FCCD1C42485000582D15 /* HYBPageControl.m in Sources */,
 				BC43FCCB1C42485000582D15 /* HYBLoadImageView.m in Sources */,
 				BC43FCD21C42485000582D15 /* MASConstraintMaker.m in Sources */,
@@ -862,6 +882,7 @@
 				BC43FCD91C42485000582D15 /* ViewController+MASAdditions.m in Sources */,
 				BC43FCE71C424CCD00582D15 /* DiscoverViewController.m in Sources */,
 				BC43FCE11C424C4900582D15 /* FTabBarController.m in Sources */,
+				BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */,
 				BC43FCD51C42485000582D15 /* MASViewConstraint.m in Sources */,
 				BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
@@ -982,7 +1003,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = FineGoods/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -991,12 +1012,10 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-Istdc++",
-				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1012,7 +1031,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				INFOPLIST_FILE = FineGoods/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1021,12 +1040,10 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-Istdc++",
-				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
