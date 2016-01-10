@@ -20,6 +20,8 @@
     NSLog(@"caiyu");
     NSLog(@"Aili");
     NSLog(@"bigcui");
+    NSLog(@"baicai");
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
