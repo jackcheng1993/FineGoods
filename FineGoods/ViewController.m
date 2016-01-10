@@ -16,13 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"test data");
-    NSLog(@"caiyu");
-    NSLog(@"Aili");
-    NSLog(@"bigcui");
-    NSLog(@"baicai");
-    NSLog(@"丁辉");
-
     // Do any additional setup after loading the view, typically from a nib.
 }
 
