@@ -19,6 +19,7 @@
     NSLog(@"test data");
     NSLog(@"caiyu");
     NSLog(@"Aili");
+    NSLog(@"baicai");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
