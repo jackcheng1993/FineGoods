@@ -20,6 +20,7 @@
     NSLog(@"caiyu");
     NSLog(@"Aili");
     NSLog(@"baicai");
+    NSLog(@"丁辉");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
