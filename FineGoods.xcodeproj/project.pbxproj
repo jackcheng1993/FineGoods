@@ -185,6 +185,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC43FC921C420CDB00582D15 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FC961C420DE000582D15 /* Controllers */,
+				BC43FC971C420DE000582D15 /* Models */,
+				BC43FC981C420DE000582D15 /* Views */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		BC43FC931C420CEE00582D15 /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FC991C420DF600582D15 /* Controllers */,
+				BC43FC9A1C420DF600582D15 /* Models */,
+				BC43FC9B1C420DF600582D15 /* Views */,
+			);
+			name = "发现";
+			sourceTree = "<group>";
+		};
+		BC43FC941C420CFB00582D15 /* 消息通知 */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FC9C1C420E2000582D15 /* Controllers */,
+				BC43FC9D1C420E2000582D15 /* Models */,
+				BC43FC9E1C420E2100582D15 /* Views */,
+			);
+			name = "消息通知";
+			sourceTree = "<group>";
+		};
+		BC43FC951C420D0F00582D15 /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FC9F1C420E5600582D15 /* Controllers */,
+				BC43FCA01C420E5600582D15 /* Models */,
+				BC43FCA11C420E5600582D15 /* Views */,
+			);
+			name = "个人中心";
+			sourceTree = "<group>";
+		};
+		BC43FC961C420DE000582D15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			path = Home/Controllers;
+			sourceTree = "<group>";
+		};
+		BC43FC971C420DE000582D15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Home/Models;
+			sourceTree = "<group>";
+		};
+		BC43FC981C420DE000582D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = Home/Views;
+			sourceTree = "<group>";
+		};
+		BC43FC991C420DF600582D15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			path = Discover/Controllers;
+			sourceTree = "<group>";
+		};
+		BC43FC9A1C420DF600582D15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Discover/Models;
+			sourceTree = "<group>";
+		};
+		BC43FC9B1C420DF600582D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = Discover/Views;
+			sourceTree = "<group>";
+		};
+		BC43FC9C1C420E2000582D15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			path = Infomation/Controllers;
+			sourceTree = "<group>";
+		};
+		BC43FC9D1C420E2000582D15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Infomation/Models;
+			sourceTree = "<group>";
+		};
+		BC43FC9E1C420E2100582D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = Infomation/Views;
+			sourceTree = "<group>";
+		};
+		BC43FC9F1C420E5600582D15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			path = UserCenter/Controllers;
+			sourceTree = "<group>";
+		};
+		BC43FCA01C420E5600582D15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = UserCenter/Models;
+			sourceTree = "<group>";
+		};
+		BC43FCA11C420E5600582D15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = UserCenter/Views;
+			sourceTree = "<group>";
+		};
 		BCD9A6E41C412C260040A19C = {
 			isa = PBXGroup;
 			children = (
@@ -204,8 +340,10 @@
 		BCD9A6EF1C412C2A0040A19C /* FineGoods */ = {
 			isa = PBXGroup;
 			children = (
-				BCE25BB71C41F59C00C514AF /* New Group */,
-				BCE25BB61C41F57300C514AF /* 首页 */,
+				BC43FC951C420D0F00582D15 /* 个人中心 */,
+				BC43FC941C420CFB00582D15 /* 消息通知 */,
+				BC43FC931C420CEE00582D15 /* 发现 */,
+				BC43FC921C420CDB00582D15 /* 首页 */,
 				BCE25B381C41EAEB00C514AF /* lib */,
 				BCD9A6F31C412C2B0040A19C /* AppDelegate.h */,
 				BCD9A6F41C412C2B0040A19C /* AppDelegate.m */,
@@ -377,20 +515,6 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
-		BCE25BB61C41F57300C514AF /* 首页 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "首页";
-			sourceTree = "<group>";
-		};
-		BCE25BB71C41F59C00C514AF /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +546,7 @@
 				TargetAttributes = {
 					BCD9A6EC1C412C290040A19C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = BMV8G2PZBP;
 					};
 				};
 			};
@@ -587,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
@@ -615,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
