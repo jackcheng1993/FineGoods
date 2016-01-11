@@ -30,11 +30,15 @@
 }
 
 - (void)createTableView {
+     self.automaticallyAdjustsScrollViewInsets = NO;
     CGRect tableViewFrame = CGRectMake(0, 0, FScreenWidth, FScreenHeight-FTabBarHeight);
     _tableView = [[UITableView alloc]initWithFrame:tableViewFrame];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    
+    FNavigationController<ChangeNavigationBarDelegate> *fNavigation = (FNavigationController<ChangeNavigationBarDelegate> *)self.navigationController;
+    _tableView.NDelegate = fNavigation;
     
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self fetchDataFromNet:NO];
