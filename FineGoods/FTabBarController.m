@@ -34,19 +34,20 @@
     NSMutableArray *mutableArray = [NSMutableArray new];
     for (NSInteger i = 0; i<vcArray.count; i++) {
         NSDictionary *dict = vcArray[i];
-        self.tabBar.items[i].tag = 100 + i;
         Class className = NSClassFromString(dict[@"className"]);
         UIViewController *viewContr = [className new];
         FNavigationController *fNavigation = [[FNavigationController alloc] initWithRootViewController:viewContr type:dict[@"className"]];
         fNavigation.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
         fNavigation.tabBarItem.image = [UIImage imageNamed:dict[@"iconName"]];
         fNavigation.tabBarItem.selectedImage = [UIImage imageNamed:dict[@"selectedImage"]];
+        fNavigation.tabBarItem.tag = 100+i;
         [mutableArray addObject:fNavigation];
     }
     self.viewControllers = mutableArray;
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSLog(@"%ld",item.tag);
     if (item.tag == 102) {
         NSLog(@"itemtest");
     }
