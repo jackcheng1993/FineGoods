@@ -16,6 +16,7 @@
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate> {
     UITableView *_tableView;
     NSMutableArray *_dataArray;
+    NSInteger _page;
 }
 
 @end
@@ -25,15 +26,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self initData];
     [self createTableView];
       // Do any additional setup after loading the view.
 }
 
+- (void)initData {
+    _dataArray = [NSMutableArray new];
+}
 - (void)createTableView {
     CGRect tableViewFrame = CGRectMake(0, 0, FScreenWidth, FScreenHeight-FTabBarHeight);
     _tableView = [[UITableView alloc]initWithFrame:tableViewFrame];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.rowHeight = 204;
+    [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeCell class]) bundle:nil] forCellReuseIdentifier:identifity];
     [self.view addSubview:_tableView];
     
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -48,7 +55,24 @@
 }
 
 - (void)fetchDataFromNet:(BOOL)isMore {
-    
+    if (isMore) _page++;
+    else _page = 0;
+    NSString *urlString = [NSString stringWithFormat:FHomeUrl,_page];
+    [NetWorkingManager getRequestWithUrl:urlString parameters:nil pageType:FHomePage successBlock:^(id object) {
+        NSDictionary *dict = (NSDictionary *)object;
+        FAppModel *appModel = [[FAppModel alloc]initWithDictionary:dict error:nil];
+        if (!isMore) {
+            [_dataArray removeAllObjects];
+            [_tableView reloadData];
+        }
+        [_dataArray addObjectsFromArray:appModel.data.topic];
+        [_tableView reloadData];
+        
+        isMore?[_tableView.mj_footer endRefreshing]:[_tableView.mj_header endRefreshing];
+    } failBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+         isMore?[_tableView.mj_footer endRefreshing]:[_tableView.mj_header endRefreshing];
+    }];
    
 }
 #pragma mark - UITableViewDataSource
@@ -57,7 +81,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FAppTopicModel *topicModel = _dataArray[indexPath.row];
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifity];
+    [cell UpdateWithModel:topicModel index:indexPath.row];
     return cell;
 }
 - (void)didReceiveMemoryWarning {

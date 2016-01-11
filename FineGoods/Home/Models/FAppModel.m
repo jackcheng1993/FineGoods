@@ -9,11 +9,15 @@
 #import "FAppModel.h"
 
 @implementation FAppModel
-
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
 @end
 
 @implementation FAppDataModel
-
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return  YES;
+}
 @end
 
 
