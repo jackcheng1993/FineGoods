@@ -11,6 +11,7 @@
 
 #pragma mark - 宏定义
 #define  FNavigationHeight 64
+#define  FTabBarHeight 49
 #define  FScreenWidth [UIScreen mainScreen].bounds.size.width
 #define  FScreenHeight [UIScreen mainScreen].bounds.size.height
 

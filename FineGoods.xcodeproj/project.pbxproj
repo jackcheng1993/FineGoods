@@ -32,6 +32,8 @@
 		BC43FCF31C424F3E00582D15 /* controllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC43FCF21C424F3E00582D15 /* controllers.plist */; };
 		BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD071C428C0100582D15 /* NetWorkingManager.m */; };
 		BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD0A1C429BB700582D15 /* FAppModel.m */; };
+		BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD0D1C42A13D00582D15 /* HomeCell.m */; };
+		BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD0E1C42A13D00582D15 /* HomeCell.xib */; };
 		BCD9A6F21C412C2A0040A19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F11C412C2A0040A19C /* main.m */; };
 		BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F41C412C2B0040A19C /* AppDelegate.m */; };
 		BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F71C412C2B0040A19C /* ViewController.m */; };
@@ -144,6 +146,9 @@
 		BC43FD071C428C0100582D15 /* NetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkingManager.m; sourceTree = "<group>"; };
 		BC43FD091C429BB700582D15 /* FAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAppModel.h; sourceTree = "<group>"; };
 		BC43FD0A1C429BB700582D15 /* FAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAppModel.m; sourceTree = "<group>"; };
+		BC43FD0C1C42A13D00582D15 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		BC43FD0D1C42A13D00582D15 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		BC43FD0E1C42A13D00582D15 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BCD9A6ED1C412C290040A19C /* FineGoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FineGoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9A6F11C412C2A0040A19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD9A6F31C412C2B0040A19C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -350,6 +355,9 @@
 		BC43FC981C420DE000582D15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC43FD0C1C42A13D00582D15 /* HomeCell.h */,
+				BC43FD0D1C42A13D00582D15 /* HomeCell.m */,
+				BC43FD0E1C42A13D00582D15 /* HomeCell.xib */,
 			);
 			name = Views;
 			path = Home/Views;
@@ -797,6 +805,7 @@
 				BCE25B8B1C41EB1400C514AF /* UMSocialSDKResourcesNew.bundle in Resources */,
 				BCE25B851C41EB1400C514AF /* UMSCommentInputControlleriPad.xib in Resources */,
 				BCE25B861C41EB1400C514AF /* UMShareEditViewController.xib in Resources */,
+				BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */,
 				BCE25B8A1C41EB1400C514AF /* UMSShareListController.xib in Resources */,
 				BCE25B7C1C41EB1400C514AF /* ALBBOpenAccountSSO.bundle in Resources */,
 				BCE25B801C41EB1400C514AF /* Tae.bundle in Resources */,
@@ -863,6 +872,7 @@
 				BC43FCCA1C42485000582D15 /* CYButtonFactory.m in Sources */,
 				BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */,
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
+				BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */,
 				BC43FCE41C424C9A00582D15 /* HomeViewController.m in Sources */,
 				BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */,
 				BCD9A6F21C412C2A0040A19C /* main.m in Sources */,

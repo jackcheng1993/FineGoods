@@ -15,7 +15,6 @@
 
 @implementation NetWorkingManager
 
-
 + (void)getRequestWithUrl:(NSString *)urlString parameters:(NSDictionary *)parameters pageType:(NSString *)pageType successBlock:(FetchDateSuccessBlock)successBlock failBlock:(FetchDateFailBlock)failBlock {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
