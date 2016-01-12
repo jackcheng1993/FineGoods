@@ -8,10 +8,8 @@
 
 #import "UIView+HYBUIViewCommon.h"
 #import "HYBLoadImageView.h"
-//#import "UIImageView+AFNetworking.h"
 #import <UIImageView+AFNetworking.h>
-//#import "AFHTTPRequestOperationManager.h"
-//#import <AFNetworking/AFNetworking.h>
+
 
 #import "HYBLoopScrollView.h"
 

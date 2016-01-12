@@ -24,12 +24,17 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    //self.tagImage.hidden = YES;
 }
 
 - (void)UpdateWithModel:(FAppTopicModel *)topicModel index:(NSInteger)index{
     if (index >= 5) self.tagImage.hidden = YES;
     
-    //[self.iconImage sd_setImageWithURL:<#(NSURL *)#> placeholderImage:<#(UIImage *)#>]
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:topicModel.pic] placeholderImage:[UIImage imageNamed:@"Fplaceholder"]];
+    
+    self.titleLabel.text = topicModel.title;
+    
+    self.loveLabel.text = topicModel.likes;
         
 }
 

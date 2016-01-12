@@ -14,7 +14,7 @@
 #import "UserViewController.h"
 #import "Define.h"
 
-@interface FTabBarController ()<UITabBarDelegate>
+@interface FTabBarController ()<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -52,6 +52,7 @@
         NSLog(@"itemtest");
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
