@@ -33,6 +33,8 @@
 		BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD0A1C429BB700582D15 /* FAppModel.m */; };
 		BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD0D1C42A13D00582D15 /* HomeCell.m */; };
 		BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD0E1C42A13D00582D15 /* HomeCell.xib */; };
+		BC43FD8E1C448F2800582D15 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD8D1C448F2800582D15 /* HomePageViewController.m */; };
+		BC43FD901C448FC300582D15 /* HomePages.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD8F1C448FC300582D15 /* HomePages.plist */; };
 		BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA41C434FB2006E5E49 /* FNavigationController.m */; };
 		BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */; };
 		BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */; };
@@ -154,6 +156,9 @@
 		BC43FD0C1C42A13D00582D15 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		BC43FD0D1C42A13D00582D15 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		BC43FD0E1C42A13D00582D15 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		BC43FD8C1C448F2800582D15 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		BC43FD8D1C448F2800582D15 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		BC43FD8F1C448FC300582D15 /* HomePages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomePages.plist; sourceTree = "<group>"; };
 		BC624DA31C434FB2006E5E49 /* FNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNavigationController.h; sourceTree = "<group>"; };
 		BC624DA41C434FB2006E5E49 /* FNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNavigationController.m; sourceTree = "<group>"; };
 		BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ChangeNavigationBar.h"; sourceTree = "<group>"; };
@@ -357,6 +362,8 @@
 			children = (
 				BC43FCE21C424C9A00582D15 /* HomeViewController.h */,
 				BC43FCE31C424C9A00582D15 /* HomeViewController.m */,
+				BC43FD8C1C448F2800582D15 /* HomePageViewController.h */,
+				BC43FD8D1C448F2800582D15 /* HomePageViewController.m */,
 			);
 			name = Controllers;
 			path = Home/Controllers;
@@ -606,6 +613,7 @@
 				BCD9A6FC1C412C2C0040A19C /* Assets.xcassets */,
 				BCD9A6FE1C412C2C0040A19C /* LaunchScreen.storyboard */,
 				BC43FCF21C424F3E00582D15 /* controllers.plist */,
+				BC43FD8F1C448FC300582D15 /* HomePages.plist */,
 				BCD9A7011C412C2C0040A19C /* Info.plist */,
 				BC43FCDB1C4248AC00582D15 /* Define.h */,
 				BCD9A6F01C412C2A0040A19C /* Supporting Files */,
@@ -848,6 +856,7 @@
 				BCE25B861C41EB1400C514AF /* UMShareEditViewController.xib in Resources */,
 				BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */,
 				BCE25B8A1C41EB1400C514AF /* UMSShareListController.xib in Resources */,
+				BC43FD901C448FC300582D15 /* HomePages.plist in Resources */,
 				BCE25B7C1C41EB1400C514AF /* ALBBOpenAccountSSO.bundle in Resources */,
 				BCE25B801C41EB1400C514AF /* Tae.bundle in Resources */,
 				BCD9A6FB1C412C2B0040A19C /* Main.storyboard in Resources */,
@@ -915,6 +924,7 @@
 				BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */,
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
 				BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */,
+				BC43FD8E1C448F2800582D15 /* HomePageViewController.m in Sources */,
 				BC43FCE41C424C9A00582D15 /* HomeViewController.m in Sources */,
 				BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */,
 				BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */,
