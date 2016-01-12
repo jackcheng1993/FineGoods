@@ -13,8 +13,9 @@
 #import "MessageViewController.h"
 #import "UserViewController.h"
 #import "Define.h"
+#import "PopMenuView.h"
 
-@interface FTabBarController ()<UITabBarDelegate>
+@interface FTabBarController ()<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -26,13 +27,21 @@
     [self createControllers];
 }
 
+- (void)customTabBar {
+    for (NSInteger idx = 1; idx<5; idx++) {
+        UITabBarItem *barItem = [[UITabBarItem alloc] init];
+    }
+}
+
 - (void)createControllers {
+    self.delegate = self;
     self.tabBar.translucent = NO;
     NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"controllers" ofType:@"plist"];
     NSArray *vcArray = [NSArray arrayWithContentsOfFile:plistPath];
     
     NSMutableArray *mutableArray = [NSMutableArray new];
     for (NSInteger i = 0; i<vcArray.count; i++) {
+        
         NSDictionary *dict = vcArray[i];
         Class className = NSClassFromString(dict[@"className"]);
         UIViewController *viewContr = [className new];
@@ -40,16 +49,39 @@
         fNavigation.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
         fNavigation.tabBarItem.image = [UIImage imageNamed:dict[@"iconName"]];
         fNavigation.tabBarItem.selectedImage = [UIImage imageNamed:dict[@"selectedImage"]];
+        
         fNavigation.tabBarItem.tag = 100+i;
+//        fNavigation.tabBarController.tabBar.tag =
+//        if (i==2) {
+//            fNavigation.tabBarController.selectedViewController =
+//        }
         [mutableArray addObject:fNavigation];
     }
     self.viewControllers = mutableArray;
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSLog(@"%ld",item.tag);
+   // NSLog(@"%ld",item.tag);
     if (item.tag == 102) {
         NSLog(@"itemtest");
+        PopMenuView *popView = [[PopMenuView alloc] initWithFrame:self.view.bounds controlBlock:^(NSInteger index) {
+            switch (index) {
+                case 101:
+                    NSLog(@"%ld",index);
+                    break;
+                case 102:
+                    NSLog(@"%ld",index);
+                    break;
+                case 103:
+                    NSLog(@"%ld",index);
+                    break;
+                default:
+                    break;
+            }
+        }];
+        [popView show];
+        
+        
     }
 }
 

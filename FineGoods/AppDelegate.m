@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "FTabBarController.h"
+#import "PhotoViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -20,12 +21,21 @@
     // Override point for customization after application launch.
 
     FTabBarController *tabBarContr = [FTabBarController new];
+    tabBarContr.delegate = self;
     self.window.rootViewController = tabBarContr;
     [self.window makeKeyAndVisible];
     
     return YES;
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    //NSLog(@"%@",viewController);
+    id controller = viewController.childViewControllers[0];
+    if ([controller isKindOfClass:[PhotoViewController class]]) {
+        return NO;
+    }
+    return YES;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
