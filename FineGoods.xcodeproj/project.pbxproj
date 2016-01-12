@@ -35,6 +35,7 @@
 		BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD0E1C42A13D00582D15 /* HomeCell.xib */; };
 		BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA41C434FB2006E5E49 /* FNavigationController.m */; };
 		BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */; };
+		BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DD31C438D8D006E5E49 /* PopMenuView.m */; };
 		BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */; };
 		BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */; };
 		BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */; };
@@ -162,6 +163,8 @@
 		BC624DA41C434FB2006E5E49 /* FNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNavigationController.m; sourceTree = "<group>"; };
 		BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ChangeNavigationBar.h"; sourceTree = "<group>"; };
 		BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ChangeNavigationBar.m"; sourceTree = "<group>"; };
+		BC624DD21C438D8D006E5E49 /* PopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenuView.h; sourceTree = "<group>"; };
+		BC624DD31C438D8D006E5E49 /* PopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuView.m; sourceTree = "<group>"; };
 		BC81DB571C43EA3A007DCA93 /* LoveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveHomeViewController.h; sourceTree = "<group>"; };
 		BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHomeViewController.m; sourceTree = "<group>"; };
 		BC81DB591C43EA3A007DCA93 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 			children = (
 				BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */,
 				BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */,
+				BC624DD21C438D8D006E5E49 /* PopMenuView.h */,
+				BC624DD31C438D8D006E5E49 /* PopMenuView.m */,
 			);
 			path = CustomLIb;
 			sourceTree = "<group>";
@@ -825,7 +830,7 @@
 				TargetAttributes = {
 					BCD9A6EC1C412C290040A19C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = BMV8G2PZBP;
+						DevelopmentTeam = 26UQV247Q3;
 					};
 				};
 			};
@@ -966,6 +971,7 @@
 				BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */,
 				BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
+				BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */,
 				BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */,
 				BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */,
 			);
@@ -1079,6 +1085,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
@@ -1095,8 +1103,9 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -1107,6 +1116,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
@@ -1123,8 +1134,9 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
