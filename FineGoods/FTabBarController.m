@@ -12,8 +12,9 @@
 #import "PhotoViewController.h"
 #import "MessageViewController.h"
 #import "UserViewController.h"
+#import "Define.h"
 
-@interface FTabBarController ()
+@interface FTabBarController ()<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -35,17 +36,29 @@
         NSDictionary *dict = vcArray[i];
         Class className = NSClassFromString(dict[@"className"]);
         UIViewController *viewContr = [className new];
-        viewContr.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
-        viewContr.tabBarItem.image = [UIImage imageNamed:dict[@"iconName"]];
-        viewContr.tabBarItem.selectedImage = [UIImage imageNamed:dict[@"selectedImage"]];
-        [mutableArray addObject:viewContr];
+        FNavigationController *fNavigation = [[FNavigationController alloc] initWithRootViewController:viewContr type:dict[@"className"]];
+        fNavigation.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 5, -5, -5);
+        fNavigation.tabBarItem.image = [UIImage imageNamed:dict[@"iconName"]];
+        fNavigation.tabBarItem.selectedImage = [UIImage imageNamed:dict[@"selectedImage"]];
+        fNavigation.tabBarItem.tag = 100+i;
+        [mutableArray addObject:fNavigation];
     }
     self.viewControllers = mutableArray;
 }
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSLog(@"%ld",item.tag);
+    if (item.tag == 102) {
+        NSLog(@"itemtest");
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

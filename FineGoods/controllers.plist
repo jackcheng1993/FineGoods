@@ -48,7 +48,7 @@
 		<key>iconName</key>
 		<string>me</string>
 		<key>selectedImage</key>
-		<string>me</string>
+		<string>me_selected</string>
 		<key>className</key>
 		<string>UserViewController</string>
 	</dict>

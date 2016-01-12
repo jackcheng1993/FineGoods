@@ -22,6 +22,11 @@
 #import "Masonry.h"  //约束
 #import "HYBLoopScrollView.h" //滚动视图
 
+
+#pragma mark - 自己封装的类
+#import "FNavigationController.h"
+#import "UIScrollView+ChangeNavigationBar.h"
+
 #pragma mark - 页面类型
 #define FHomePage @"homePage"
 
