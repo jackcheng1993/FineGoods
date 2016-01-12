@@ -4,12 +4,12 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "93CF17A22344B8A979C7198EA66226510BD902C0" : 0,
+    "809969B739B8B918DD63241111F0081525A424B8" : 0,
     "500D7E0758B8BBEFAE60EE58F0F3EE603C58111A" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "891E1D29-C290-479F-BB2B-3FC10DF5F015",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "93CF17A22344B8A979C7198EA66226510BD902C0" : "",
+    "809969B739B8B918DD63241111F0081525A424B8" : "",
     "500D7E0758B8BBEFAE60EE58F0F3EE603C58111A" : "FineGoods\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "FineGoods",
@@ -24,7 +24,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jackcheng1993\/FineGoods.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "93CF17A22344B8A979C7198EA66226510BD902C0"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "809969B739B8B918DD63241111F0081525A424B8"
     }
   ]
 }

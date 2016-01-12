@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellID" id="AL7-n6-rbh" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AL7-n6-rbh" id="yhW-KO-cqQ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-RP-kzF">
+                        <rect key="frame" x="8" y="8" width="26" height="26"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yG-YQ-Cmr">
+                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="47" y="10" width="240" height="21"/>
+                        </variation>
+                    </label>
+                </subviews>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="7yG-YQ-Cmr"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="7yG-YQ-Cmr"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageICON" destination="gW5-RP-kzF" id="kko-Hd-4eV"/>
+                <outlet property="textName" destination="7yG-YQ-Cmr" id="Ydh-8B-vsY"/>
+            </connections>
+            <point key="canvasLocation" x="242" y="107"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagecellID" rowHeight="133" id="ygc-WS-pei" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygc-WS-pei" id="3pg-lc-YrQ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-rh-UCC">
+                        <rect key="frame" x="32" y="26" width="240" height="128"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="w0L-rh-UCC" secondAttribute="bottom" constant="5" id="6GU-I4-zCx"/>
+                    <constraint firstItem="w0L-rh-UCC" firstAttribute="leading" secondItem="3pg-lc-YrQ" secondAttribute="leading" constant="5" id="EBJ-7z-DhJ"/>
+                    <constraint firstItem="w0L-rh-UCC" firstAttribute="top" secondItem="3pg-lc-YrQ" secondAttribute="top" constant="5" id="iZg-q9-UeY"/>
+                    <constraint firstAttribute="trailing" secondItem="w0L-rh-UCC" secondAttribute="trailing" constant="5" id="pVH-Ib-dc5"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6GU-I4-zCx"/>
+                        <exclude reference="EBJ-7z-DhJ"/>
+                        <exclude reference="iZg-q9-UeY"/>
+                        <exclude reference="pVH-Ib-dc5"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="6GU-I4-zCx"/>
+                        <include reference="EBJ-7z-DhJ"/>
+                        <include reference="iZg-q9-UeY"/>
+                        <include reference="pVH-Ib-dc5"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="pictureView" destination="w0L-rh-UCC" id="wTu-Lw-uX9"/>
+            </connections>
+            <point key="canvasLocation" x="242" y="334"/>
+        </tableViewCell>
+    </objects>
+</document>
