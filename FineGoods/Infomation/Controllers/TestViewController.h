@@ -1,5 +1,5 @@
 //
-//  LoveHomeViewController.h
+//  TestViewController.h
 //  FineGoods
 //
 //  Created by qianfeng on 16/1/12.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface LoveHomeViewController : BaseViewController
+@interface TestViewController : BaseViewController
 
 @end
