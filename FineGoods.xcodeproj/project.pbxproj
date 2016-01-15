@@ -47,6 +47,10 @@
 		BC81DB711C43EBC8007DCA93 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB701C43EBC8007DCA93 /* MessageCell.m */; };
 		BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB731C43EBF1007DCA93 /* MessageModel.m */; };
 		BC81DB781C43EF7E007DCA93 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81DB771C43EF7E007DCA93 /* MessageCell.xib */; };
+		BC9489A41C44A96B005D2C92 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */; };
+		BC9489A71C44AEC5005D2C92 /* PicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */; };
+		BC9489AA1C44B03C005D2C92 /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A91C44B03C005D2C92 /* DiscoverModel.m */; };
+		BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */; };
 		BCD9A6F21C412C2A0040A19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F11C412C2A0040A19C /* main.m */; };
 		BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F41C412C2B0040A19C /* AppDelegate.m */; };
 		BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F71C412C2B0040A19C /* ViewController.m */; };
@@ -185,6 +189,14 @@
 		BC81DB721C43EBF1007DCA93 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		BC81DB731C43EBF1007DCA93 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		BC81DB771C43EF7E007DCA93 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		BC9489A21C44A96B005D2C92 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonTableViewCell.h; path = FineGoods/ButtonTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonTableViewCell.m; path = FineGoods/ButtonTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BC9489A51C44AEC5005D2C92 /* PicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PicTableViewCell.h; path = FineGoods/PicTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PicTableViewCell.m; path = FineGoods/PicTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BC9489A81C44B03C005D2C92 /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
+		BC9489A91C44B03C005D2C92 /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		BC9489AB1C44E8A1005D2C92 /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopTableViewCell.h; path = FineGoods/Discover/Models/TopTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopTableViewCell.m; path = FineGoods/Discover/Models/TopTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		BCD9A6ED1C412C290040A19C /* FineGoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FineGoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9A6F11C412C2A0040A19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD9A6F31C412C2B0040A19C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -413,6 +425,8 @@
 		BC43FC9A1C420DF600582D15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC9489A81C44B03C005D2C92 /* DiscoverModel.h */,
+				BC9489A91C44B03C005D2C92 /* DiscoverModel.m */,
 			);
 			name = Models;
 			path = Discover/Models;
@@ -421,6 +435,12 @@
 		BC43FC9B1C420DF600582D15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC9489A21C44A96B005D2C92 /* ButtonTableViewCell.h */,
+				BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */,
+				BC9489A51C44AEC5005D2C92 /* PicTableViewCell.h */,
+				BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */,
+				BC9489AB1C44E8A1005D2C92 /* TopTableViewCell.h */,
+				BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */,
 			);
 			name = Views;
 			path = Discover/Views;
@@ -954,9 +974,12 @@
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
 				BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */,
 				BC43FCE41C424C9A00582D15 /* HomeViewController.m in Sources */,
+				BC9489A41C44A96B005D2C92 /* ButtonTableViewCell.m in Sources */,
 				BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */,
 				BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */,
 				BCD9A6F21C412C2A0040A19C /* main.m in Sources */,
+				BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */,
+				BC9489AA1C44B03C005D2C92 /* DiscoverModel.m in Sources */,
 				BC43FCD81C42485000582D15 /* View+MASAdditions.m in Sources */,
 				BC43FCD31C42485000582D15 /* MASLayoutConstraint.m in Sources */,
 				BC43FCD11C42485000582D15 /* MASConstraint.m in Sources */,
@@ -980,7 +1003,9 @@
 				BC43FCE11C424C4900582D15 /* FTabBarController.m in Sources */,
 				BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */,
 				BC43FCD51C42485000582D15 /* MASViewConstraint.m in Sources */,
+				BC9489A71C44AEC5005D2C92 /* PicTableViewCell.m in Sources */,
 				BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */,
+				BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
 				BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */,
 				BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */,

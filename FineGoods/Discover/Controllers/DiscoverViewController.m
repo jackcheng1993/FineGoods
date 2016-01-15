@@ -8,26 +8,21 @@
 
 #import "DiscoverViewController.h"
 #import "Define.h"
-
-
+#import "ButtonTableViewCell.h"
+#import "PicTableViewCell.h"
+#import <AFNetworking/AFNetworking.h>
+#import <UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+#import "DiscoverViewController.h"
 
 @interface DiscoverViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
     UITableView *_tableView;
+   
+    //下方cell的数据源
+    NSMutableArray *_dataSource;
     
-    NSArray *_nameArray;
-    UIScrollView *_smallScrollView;
-    
-    CGFloat _screenWidth;
-    
-    UIButton *_button;
-    
-    UILabel *_label;
-    
-    UIScrollView *_bigScrollView;
-    
-    NSArray *_dataArray;
-    
-    CGFloat _point;
+    //button的数据源
+    NSMutableArray *_buttonSource;
     
     
     
@@ -42,123 +37,103 @@
     self.view.backgroundColor = [UIColor redColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self createBigScrollView];
-    [self createSmallScrollView];
-    [self addTitleButton];
-    [self addButton8];
+    _dataSource = [[NSMutableArray alloc] init];
+
     
+    [self createTableView];
+    [self loadDataFromNet];
+}
+
+- (void)loadDataFromNet {
+
+    NSString *url = [NSString stringWithFormat:@"http://open3.bantangapp.com/community/post/communityHome?app_installtime=1452331892.334167&app_versions=5.3&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&device_token=fcd81a592076bcf8880783024f734f690128cf6722f1f54883a256273364722d&oauth_token=363cac3679a227d4dbad03f828aefa2b&os_versions=9.2&screensize=750&track_deviceid=B884FCB9-2C81-448D-82F4-A28AC8CE7034&track_user_id=1769058&v=10"];
     
-}
-
-- (void)createSmallScrollView {
-    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, FScreenWidth, 40)];
-    _smallScrollView.backgroundColor = [UIColor whiteColor];
-    _smallScrollView.delegate = self;
-    [self.view addSubview:_smallScrollView];
-}
-
-- (void)createBigScrollView {
-    _bigScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64+40, FScreenWidth, FScreenWidth/2)];
-    _bigScrollView.delegate = self;
-    _bigScrollView.backgroundColor = [UIColor whiteColor];
-    _bigScrollView.contentSize = CGSizeMake(4*FScreenWidth, FScreenWidth/2);
-    _bigScrollView.pagingEnabled = YES;
-    _bigScrollView.showsHorizontalScrollIndicator = NO;
-    _bigScrollView.showsVerticalScrollIndicator = NO;
-    _bigScrollView.alwaysBounceHorizontal = NO;
-    [self.view addSubview:_bigScrollView];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    if (scrollView == _bigScrollView) {
-        NSInteger index = _bigScrollView.contentOffset.x/FScreenWidth;
-        UIButton *button = (UIButton *)[self.view viewWithTag:index+100];
-        _button.selected = NO;
-        _button.transform = CGAffineTransformMakeScale(1, 1);
-        button.selected = YES;
-        _button = button;
-        _button.transform = CGAffineTransformMakeScale(1, 1);
-    }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == _bigScrollView) {
-        [UIView animateWithDuration:0.5 animations:^{
-            _label.frame = CGRectMake(scrollView.contentOffset.x/_bigScrollView.frame.size.width*_screenWidth, CGRectGetMaxY(_button.frame)-1, _screenWidth, 2);
-        }];
-    }
-}
-
-- (void)addButton8 {
-    for (int i = 0; i < _nameArray.count ; i++) {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        for (int k = 0; k <= 7; k++) {
-            UIButton *_btn = [[UIButton alloc] init];
-            if (k/4 == 0) {
-                _btn.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, FScreenWidth/6);
-                _btn.center = CGPointMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), FScreenWidth/8);
-                _btn.layer.cornerRadius = FScreenWidth/6/2;
-                _btn.layer.masksToBounds = YES;
-                [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIControlStateNormal];
-                [_bigScrollView addSubview:_btn];
-                
-                
-            }else if (k/4 > 0){
-                _btn.frame = CGRectMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 60*2, FScreenWidth/6, FScreenWidth/6);
-                _btn.center = CGPointMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 3*FScreenWidth/8);
-                _btn.layer.cornerRadius = FScreenWidth/6/2;
-                _btn.layer.masksToBounds = YES;
-                [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIControlStateNormal];
-                
-            }
-            
-            [_bigScrollView addSubview:_btn];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        DiscoverModel *_model = [[DiscoverModel alloc] initWithDictionary:dict error:nil];
+        
+        _dataSource = _model.data.rec_groups;
+        _buttonSource = _model.data.module_elements                                                                                                                                      ;
+        
+        [_tableView reloadData];
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+    }];
+    
+}
+
+
+
+
+
+- (void)createTableView {
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    [self.view addSubview:_tableView];
+    
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataSource.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return FScreenWidth/2+40;
+    }else{
+    return FScreenWidth/2;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(indexPath.row == 0 ){
+        static NSString *identifier = @"cellID";
+        ButtonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (cell == nil) {
+            cell = [[ButtonTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         
+        return cell;
     }
-}
-
-- (void)addTitleButton {
-    _nameArray = @[@"热门推荐",@"深夜食堂",@"变美神器",@"一种生活"];
-    _screenWidth = self.view.frame.size.width/4;
-    for (int i = 0; i < _nameArray.count; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(_screenWidth*i, 0, _screenWidth, 35);
-        [button setTitle:_nameArray[i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        button.tag = 100 + i;
-        [_smallScrollView addSubview:button];
-        if (i == 0) {
-            button.selected = YES;
-            _button = button;
-            _button.transform = CGAffineTransformMakeScale(1.1, 1.1);
-            _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(button.frame)-1, _screenWidth, 2)];
-            _label.backgroundColor = [UIColor redColor];
-            [_smallScrollView addSubview:_label];
+   
+    if(indexPath.row != 0 ){
+        static NSString *identifier1 = @"cellID1";
+        PicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier1];
+        if (cell == nil) {
+            cell = [[PicTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier1];
         }
+        cell.model = _dataSource[indexPath.row];
+        
+        return cell;
     }
-    _smallScrollView.contentSize = CGSizeMake(_screenWidth*_nameArray.count, 40);
-    _smallScrollView.showsHorizontalScrollIndicator = NO;
+    static NSString *identifier2 = @"cellID2";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier2];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier2];
+    }
+    //cell.model = _mutableArray[indexPath.row];
+    
+    return cell;
+}
+//点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"点击了%ld",(long)indexPath.row);
+    
 }
 
-- (void)buttonClick:(UIButton *)button {
-    if (_button == button) {
-        return;
-    }
-    button.selected = YES;
-    _button.selected = NO;
-    _button.transform = CGAffineTransformMakeScale(1, 1);
-    _button = button;
-    _button.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    [UIView animateWithDuration:0.5 animations:^{
-        _label.frame = CGRectMake(CGRectGetMinX(_button.frame), CGRectGetMaxY(_button.frame)-1, _screenWidth, 2);
-    }];
-    [UIView animateWithDuration:0.5 animations:^{
-        _bigScrollView.contentOffset = CGPointMake(self.view.frame.size.width*(button.tag-100), 0);
-    }];
-}
+
+
 
 
 - (void)didReceiveMemoryWarning {
