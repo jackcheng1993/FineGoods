@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 #import "NewPushViewController.h"
 #import "LoveHomeViewController.h"
+#import "NowTalkViewController.h"
 #import "Define.h"
 #import "MessageCell.h"
 #import "MessageModel.h"
@@ -33,13 +34,10 @@
     _dataArray = [NSMutableArray new];
     [_dataArray addObject:_array];
     _isFirst = 0;
-    [self setUINavigationBar];
     
     [self fetNetWork];
 }
-//导航栏设置
-- (void)setUINavigationBar {
-    }
+
 //请求网络数据
 - (void)fetNetWork {
     NSString *urlString = @"http://open3.bantangapp.com/users/notice/redSpot?";
@@ -69,17 +67,43 @@
 - (void)createTableView{
     
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped ];
+        //_tableView = [UITableView alloc]
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.separatorColor = [UIColor whiteColor];
+        //_tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+        //_tableView.separatorColor = [UIColor grayColor];
+        
         [self.view addSubview:_tableView];
     }
     
     
 }
 #define  mark-UITableViewDelegate
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, FScreenWidth - 5, 20)];
+    if (1 == section) {
+      
+        label.text = @"热门活动";
+        
+        
+    }
+
+    
+    
+    return label;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    CGFloat height = 25;
+    if (0 == section) {
+        
+        height = 0.01f;
+    }
+    return height;
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return _dataArray.count;
 }
@@ -98,7 +122,7 @@
     MessageCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell==nil) {
         cell=[[MessageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier index:indexPath.section];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     if (indexPath.section == 1) {
@@ -130,7 +154,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         NewPushViewController *nVC = [NewPushViewController new];
-        nVC.Ntitle = _dataArray[indexPath.section][indexPath.row];
+        nVC.nTitle = _dataArray[indexPath.section][indexPath.row];
         [self.navigationController pushViewController:nVC animated:YES];
         //[self presentViewController:nVC animated:YES completion:nil];
     }else if (1 == indexPath.section){
@@ -138,12 +162,16 @@
         if ([model.extend isEqualToString:@"835"]) {
             
             LoveHomeViewController *lHVC = [LoveHomeViewController new];
-            lHVC.tag_id = model.extend;
+            lHVC.extend = model.extend;
+            lHVC.nTitle = model.title;
             [self.navigationController pushViewController:lHVC animated:YES];
             //[self presentViewController:lHVC animated:YES completion:nil];
         }else{
             
-            
+            NowTalkViewController *nVC = [[NowTalkViewController alloc]initWithNibName:NSStringFromClass([NowTalkViewController class]) bundle:nil];
+            nVC.extend = model.extend;
+            nVC.nTitle = @"本期话题";
+            [self.navigationController pushViewController:nVC animated:YES];
         }
     }
 }

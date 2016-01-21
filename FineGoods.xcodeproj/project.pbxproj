@@ -36,9 +36,14 @@
 		BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA41C434FB2006E5E49 /* FNavigationController.m */; };
 		BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */; };
 		BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DD31C438D8D006E5E49 /* PopMenuView.m */; };
-		BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */; };
+		BC7DE4901C45021A00D1D460 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE48F1C45021A00D1D460 /* BaseViewController.m */; };
+		BC7DE4931C451CE600D1D460 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */; };
+		BC7DE4961C451D6D00D1D460 /* NowTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */; };
+		BC7DE4991C451DE800D1D460 /* NewPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4981C451DE800D1D460 /* NewPushViewController.m */; };
+		BC7DE49B1C452A7F00D1D460 /* NowTalkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */; };
+		BC7DE49F1C452AD300D1D460 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE49D1C452AD300D1D460 /* TestViewController.m */; };
+		BC7DE4A01C452AD300D1D460 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7DE49E1C452AD300D1D460 /* TestViewController.xib */; };
 		BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */; };
-		BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */; };
 		BC81DB711C43EBC8007DCA93 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB701C43EBC8007DCA93 /* MessageCell.m */; };
 		BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB731C43EBF1007DCA93 /* MessageModel.m */; };
 		BC81DB781C43EF7E007DCA93 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81DB771C43EF7E007DCA93 /* MessageCell.xib */; };
@@ -165,12 +170,20 @@
 		BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ChangeNavigationBar.m"; sourceTree = "<group>"; };
 		BC624DD21C438D8D006E5E49 /* PopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenuView.h; sourceTree = "<group>"; };
 		BC624DD31C438D8D006E5E49 /* PopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuView.m; sourceTree = "<group>"; };
-		BC81DB571C43EA3A007DCA93 /* LoveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveHomeViewController.h; sourceTree = "<group>"; };
-		BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHomeViewController.m; sourceTree = "<group>"; };
+		BC7DE48E1C45021A00D1D460 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		BC7DE48F1C45021A00D1D460 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BC7DE4911C451CE600D1D460 /* LoveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveHomeViewController.h; sourceTree = "<group>"; };
+		BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHomeViewController.m; sourceTree = "<group>"; };
+		BC7DE4941C451D6D00D1D460 /* NowTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowTalkViewController.h; sourceTree = "<group>"; };
+		BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowTalkViewController.m; sourceTree = "<group>"; };
+		BC7DE4971C451DE800D1D460 /* NewPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPushViewController.h; sourceTree = "<group>"; };
+		BC7DE4981C451DE800D1D460 /* NewPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPushViewController.m; sourceTree = "<group>"; };
+		BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowTalkViewController.xib; sourceTree = "<group>"; };
+		BC7DE49C1C452AD300D1D460 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		BC7DE49D1C452AD300D1D460 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BC7DE49E1C452AD300D1D460 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		BC81DB591C43EA3A007DCA93 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		BC81DB5B1C43EA3A007DCA93 /* NewPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPushViewController.h; sourceTree = "<group>"; };
-		BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPushViewController.m; sourceTree = "<group>"; };
 		BC81DB6F1C43EBC8007DCA93 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = FineGoods/Infomation/Models/MessageCell.h; sourceTree = SOURCE_ROOT; };
 		BC81DB701C43EBC8007DCA93 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = FineGoods/Infomation/Models/MessageCell.m; sourceTree = SOURCE_ROOT; };
 		BC81DB721C43EBF1007DCA93 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
@@ -350,6 +363,7 @@
 		BC43FC941C420CFB00582D15 /* 消息通知 */ = {
 			isa = PBXGroup;
 			children = (
+				BC7DE48D1C4501F900D1D460 /* 基类 */,
 				BC43FC9C1C420E2000582D15 /* Controllers */,
 				BC43FC9D1C420E2000582D15 /* Models */,
 				BC43FC9E1C420E2100582D15 /* Views */,
@@ -435,12 +449,18 @@
 		BC43FC9C1C420E2000582D15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC81DB571C43EA3A007DCA93 /* LoveHomeViewController.h */,
-				BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */,
 				BC81DB591C43EA3A007DCA93 /* MessageViewController.h */,
 				BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */,
-				BC81DB5B1C43EA3A007DCA93 /* NewPushViewController.h */,
-				BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */,
+				BC7DE4911C451CE600D1D460 /* LoveHomeViewController.h */,
+				BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */,
+				BC7DE4941C451D6D00D1D460 /* NowTalkViewController.h */,
+				BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */,
+				BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */,
+				BC7DE4971C451DE800D1D460 /* NewPushViewController.h */,
+				BC7DE4981C451DE800D1D460 /* NewPushViewController.m */,
+				BC7DE49C1C452AD300D1D460 /* TestViewController.h */,
+				BC7DE49D1C452AD300D1D460 /* TestViewController.m */,
+				BC7DE49E1C452AD300D1D460 /* TestViewController.xib */,
 			);
 			name = Controllers;
 			path = Infomation/Controllers;
@@ -589,6 +609,15 @@
 				BC624DD31C438D8D006E5E49 /* PopMenuView.m */,
 			);
 			path = CustomLIb;
+			sourceTree = "<group>";
+		};
+		BC7DE48D1C4501F900D1D460 /* 基类 */ = {
+			isa = PBXGroup;
+			children = (
+				BC7DE48E1C45021A00D1D460 /* BaseViewController.h */,
+				BC7DE48F1C45021A00D1D460 /* BaseViewController.m */,
+			);
+			name = "基类";
 			sourceTree = "<group>";
 		};
 		BCD9A6E41C412C260040A19C = {
@@ -830,7 +859,7 @@
 				TargetAttributes = {
 					BCD9A6EC1C412C290040A19C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 26UQV247Q3;
+						DevelopmentTeam = 52A42K7HEK;
 					};
 				};
 			};
@@ -858,6 +887,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE25B911C41EB1500C514AF /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				BC7DE49B1C452A7F00D1D460 /* NowTalkViewController.xib in Resources */,
 				BCE25B871C41EB1400C514AF /* UMShareEditViewControlleriPad.xib in Resources */,
 				BC43FCCF1C42485000582D15 /* Info.plist in Resources */,
 				BCE25B891C41EB1400C514AF /* UMSnsAccountViewController.xib in Resources */,
@@ -865,6 +895,7 @@
 				BCE25B841C41EB1400C514AF /* UMSCommentInputController.xib in Resources */,
 				BCE25B831C41EB1400C514AF /* UMSCommentDetailController.xib in Resources */,
 				BCD9A7001C412C2C0040A19C /* LaunchScreen.storyboard in Resources */,
+				BC7DE4A01C452AD300D1D460 /* TestViewController.xib in Resources */,
 				BCE25B961C41EB1500C514AF /* yw_1222.jpg in Resources */,
 				BCD9A6FD1C412C2C0040A19C /* Assets.xcassets in Resources */,
 				BC43FCF31C424F3E00582D15 /* controllers.plist in Resources */,
@@ -937,6 +968,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC43FCCA1C42485000582D15 /* CYButtonFactory.m in Sources */,
+				BC7DE4931C451CE600D1D460 /* LoveHomeViewController.m in Sources */,
+				BC7DE4901C45021A00D1D460 /* BaseViewController.m in Sources */,
 				BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */,
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
 				BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */,
@@ -958,9 +991,12 @@
 				BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */,
 				BC43FCCD1C42485000582D15 /* HYBPageControl.m in Sources */,
 				BC43FCCB1C42485000582D15 /* HYBLoadImageView.m in Sources */,
+				BC7DE4961C451D6D00D1D460 /* NowTalkViewController.m in Sources */,
 				BC43FCD21C42485000582D15 /* MASConstraintMaker.m in Sources */,
+				BC7DE4991C451DE800D1D460 /* NewPushViewController.m in Sources */,
 				BC43FCED1C424CEE00582D15 /* UserViewController.m in Sources */,
 				BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */,
+				BC7DE49F1C452AD300D1D460 /* TestViewController.m in Sources */,
 				BC43FCD91C42485000582D15 /* ViewController+MASAdditions.m in Sources */,
 				BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */,
 				BC43FCE71C424CCD00582D15 /* DiscoverViewController.m in Sources */,
@@ -972,7 +1008,6 @@
 				BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
 				BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */,
-				BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */,
 				BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1103,7 +1138,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1134,7 +1169,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";

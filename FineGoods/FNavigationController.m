@@ -67,6 +67,10 @@
         
     }
     if ([type isEqualToString:@"MessageViewController"]) {
+        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 44, 100)];
+        title.text = @"消息";
+        title.textColor = [UIColor whiteColor];
+        controlller.navigationItem.titleView = title;
         
     }
     if ([type isEqualToString:@"UserViewController"]) {

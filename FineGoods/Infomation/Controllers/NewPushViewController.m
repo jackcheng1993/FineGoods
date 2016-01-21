@@ -2,7 +2,7 @@
 //  NewPushViewController.m
 //  FineGoods
 //
-//  Created by qianfeng on 16/1/11.
+//  Created by qianfeng on 16/1/12.
 //  Copyright © 2016年 Aili. All rights reserved.
 //
 
@@ -16,11 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    //
-    
-    
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
