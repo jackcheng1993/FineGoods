@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC40C9A91C4CC92F00707190 /* FHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40C9A81C4CC92F00707190 /* FHomeDetailModel.m */; };
 		BC43FCCA1C42485000582D15 /* CYButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FCA51C42485000582D15 /* CYButtonFactory.m */; };
 		BC43FCCB1C42485000582D15 /* HYBLoadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FCA81C42485000582D15 /* HYBLoadImageView.m */; };
 		BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FCAA1C42485000582D15 /* HYBLoopScrollView.m */; };
@@ -35,6 +36,11 @@
 		BC43FD101C42A13D00582D15 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD0E1C42A13D00582D15 /* HomeCell.xib */; };
 		BC43FD8E1C448F2800582D15 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD8D1C448F2800582D15 /* HomePageViewController.m */; };
 		BC43FD901C448FC300582D15 /* HomePages.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC43FD8F1C448FC300582D15 /* HomePages.plist */; };
+		BC43FD931C44ADCF00582D15 /* TitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD921C44ADCF00582D15 /* TitleLabel.m */; };
+		BC43FD961C45457E00582D15 /* FHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD951C45457E00582D15 /* FHomeModel.m */; };
+		BC43FD9D1C45E21300582D15 /* NewUserGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC43FD9C1C45E21300582D15 /* NewUserGuideController.m */; };
+		BC5526501C4F3BC9001DDDF9 /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC55264F1C4F3BC9001DDDF9 /* ProductListCell.m */; };
+		BC5526531C4F68BE001DDDF9 /* ProductMediaItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5526521C4F68BE001DDDF9 /* ProductMediaItemCell.m */; };
 		BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA41C434FB2006E5E49 /* FNavigationController.m */; };
 		BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */; };
 		BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */; };
@@ -43,6 +49,10 @@
 		BC81DB711C43EBC8007DCA93 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB701C43EBC8007DCA93 /* MessageCell.m */; };
 		BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB731C43EBF1007DCA93 /* MessageModel.m */; };
 		BC81DB781C43EF7E007DCA93 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81DB771C43EF7E007DCA93 /* MessageCell.xib */; };
+		BC8CB8631C47E4B800259BEA /* PushControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB8621C47E4B800259BEA /* PushControllerTransition.m */; };
+		BC8CB8661C47E6B800259BEA /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB8651C47E6B800259BEA /* HomeDetailViewController.m */; };
+		BC8CB86C1C47F0FF00259BEA /* TopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB86B1C47F0FF00259BEA /* TopWindow.m */; };
+		BCC8041C1C4CE1FB007EE5E2 /* HomeProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8041B1C4CE1FB007EE5E2 /* HomeProductViewController.m */; };
 		BCD9A6F21C412C2A0040A19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F11C412C2A0040A19C /* main.m */; };
 		BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F41C412C2B0040A19C /* AppDelegate.m */; };
 		BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F71C412C2B0040A19C /* ViewController.m */; };
@@ -101,6 +111,8 @@
 		19C051AE2402883B54938FB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78061FEC31FF30D0326F90BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9A7AE3933B58E01DF38C9974 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BC40C9A71C4CC92F00707190 /* FHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHomeDetailModel.h; sourceTree = "<group>"; };
+		BC40C9A81C4CC92F00707190 /* FHomeDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHomeDetailModel.m; sourceTree = "<group>"; };
 		BC43FCA41C42485000582D15 /* CYButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYButtonFactory.h; sourceTree = "<group>"; };
 		BC43FCA51C42485000582D15 /* CYButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYButtonFactory.m; sourceTree = "<group>"; };
 		BC43FCA71C42485000582D15 /* HYBLoadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBLoadImageView.h; sourceTree = "<group>"; };
@@ -159,6 +171,16 @@
 		BC43FD8C1C448F2800582D15 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		BC43FD8D1C448F2800582D15 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		BC43FD8F1C448FC300582D15 /* HomePages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomePages.plist; sourceTree = "<group>"; };
+		BC43FD911C44ADCF00582D15 /* TitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleLabel.h; sourceTree = "<group>"; };
+		BC43FD921C44ADCF00582D15 /* TitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleLabel.m; sourceTree = "<group>"; };
+		BC43FD941C45457D00582D15 /* FHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHomeModel.h; sourceTree = "<group>"; };
+		BC43FD951C45457E00582D15 /* FHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHomeModel.m; sourceTree = "<group>"; };
+		BC43FD9B1C45E21300582D15 /* NewUserGuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserGuideController.h; sourceTree = "<group>"; };
+		BC43FD9C1C45E21300582D15 /* NewUserGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserGuideController.m; sourceTree = "<group>"; };
+		BC55264E1C4F3BC9001DDDF9 /* ProductListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListCell.h; sourceTree = "<group>"; };
+		BC55264F1C4F3BC9001DDDF9 /* ProductListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListCell.m; sourceTree = "<group>"; };
+		BC5526511C4F68BE001DDDF9 /* ProductMediaItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMediaItemCell.h; sourceTree = "<group>"; };
+		BC5526521C4F68BE001DDDF9 /* ProductMediaItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductMediaItemCell.m; sourceTree = "<group>"; };
 		BC624DA31C434FB2006E5E49 /* FNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNavigationController.h; sourceTree = "<group>"; };
 		BC624DA41C434FB2006E5E49 /* FNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNavigationController.m; sourceTree = "<group>"; };
 		BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ChangeNavigationBar.h"; sourceTree = "<group>"; };
@@ -174,6 +196,14 @@
 		BC81DB721C43EBF1007DCA93 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		BC81DB731C43EBF1007DCA93 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		BC81DB771C43EF7E007DCA93 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		BC8CB8611C47E4B800259BEA /* PushControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushControllerTransition.h; sourceTree = "<group>"; };
+		BC8CB8621C47E4B800259BEA /* PushControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushControllerTransition.m; sourceTree = "<group>"; };
+		BC8CB8641C47E6B800259BEA /* HomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDetailViewController.h; sourceTree = "<group>"; };
+		BC8CB8651C47E6B800259BEA /* HomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
+		BC8CB86A1C47F0FF00259BEA /* TopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopWindow.h; sourceTree = "<group>"; };
+		BC8CB86B1C47F0FF00259BEA /* TopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopWindow.m; sourceTree = "<group>"; };
+		BCC8041A1C4CE1FB007EE5E2 /* HomeProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductViewController.h; sourceTree = "<group>"; };
+		BCC8041B1C4CE1FB007EE5E2 /* HomeProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductViewController.m; sourceTree = "<group>"; };
 		BCD9A6ED1C412C290040A19C /* FineGoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FineGoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9A6F11C412C2A0040A19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD9A6F31C412C2B0040A19C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -364,6 +394,10 @@
 				BC43FCE31C424C9A00582D15 /* HomeViewController.m */,
 				BC43FD8C1C448F2800582D15 /* HomePageViewController.h */,
 				BC43FD8D1C448F2800582D15 /* HomePageViewController.m */,
+				BC8CB8641C47E6B800259BEA /* HomeDetailViewController.h */,
+				BC8CB8651C47E6B800259BEA /* HomeDetailViewController.m */,
+				BCC8041A1C4CE1FB007EE5E2 /* HomeProductViewController.h */,
+				BCC8041B1C4CE1FB007EE5E2 /* HomeProductViewController.m */,
 			);
 			name = Controllers;
 			path = Home/Controllers;
@@ -374,6 +408,10 @@
 			children = (
 				BC43FD091C429BB700582D15 /* FAppModel.h */,
 				BC43FD0A1C429BB700582D15 /* FAppModel.m */,
+				BC43FD941C45457D00582D15 /* FHomeModel.h */,
+				BC43FD951C45457E00582D15 /* FHomeModel.m */,
+				BC40C9A71C4CC92F00707190 /* FHomeDetailModel.h */,
+				BC40C9A81C4CC92F00707190 /* FHomeDetailModel.m */,
 			);
 			name = Models;
 			path = Home/Models;
@@ -385,6 +423,10 @@
 				BC43FD0C1C42A13D00582D15 /* HomeCell.h */,
 				BC43FD0D1C42A13D00582D15 /* HomeCell.m */,
 				BC43FD0E1C42A13D00582D15 /* HomeCell.xib */,
+				BC55264E1C4F3BC9001DDDF9 /* ProductListCell.h */,
+				BC55264F1C4F3BC9001DDDF9 /* ProductListCell.m */,
+				BC5526511C4F68BE001DDDF9 /* ProductMediaItemCell.h */,
+				BC5526521C4F68BE001DDDF9 /* ProductMediaItemCell.m */,
 			);
 			name = Views;
 			path = Home/Views;
@@ -564,11 +606,44 @@
 			path = Home/Manager;
 			sourceTree = "<group>";
 		};
+		BC43FD981C45E17300582D15 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FCDF1C424C4900582D15 /* FTabBarController.h */,
+				BC43FCE01C424C4900582D15 /* FTabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		BC43FD991C45E19300582D15 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BC624DA31C434FB2006E5E49 /* FNavigationController.h */,
+				BC624DA41C434FB2006E5E49 /* FNavigationController.m */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		BC43FD9A1C45E1B200582D15 /* NewUserGuideController */ = {
+			isa = PBXGroup;
+			children = (
+				BC43FD9B1C45E21300582D15 /* NewUserGuideController.h */,
+				BC43FD9C1C45E21300582D15 /* NewUserGuideController.m */,
+			);
+			name = NewUserGuideController;
+			sourceTree = "<group>";
+		};
 		BC624DA61C434FD4006E5E49 /* CustomLIb */ = {
 			isa = PBXGroup;
 			children = (
+				BC8CB86A1C47F0FF00259BEA /* TopWindow.h */,
+				BC8CB86B1C47F0FF00259BEA /* TopWindow.m */,
 				BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */,
 				BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */,
+				BC43FD911C44ADCF00582D15 /* TitleLabel.h */,
+				BC43FD921C44ADCF00582D15 /* TitleLabel.m */,
+				BC8CB8611C47E4B800259BEA /* PushControllerTransition.h */,
+				BC8CB8621C47E4B800259BEA /* PushControllerTransition.m */,
 			);
 			path = CustomLIb;
 			sourceTree = "<group>";
@@ -596,17 +671,16 @@
 			children = (
 				BC624DA61C434FD4006E5E49 /* CustomLIb */,
 				BC43FCF11C424D4600582D15 /* 选图 */,
+				BC43FC931C420CEE00582D15 /* 发现 */,
 				BC43FC951C420D0F00582D15 /* 个人中心 */,
 				BC43FC941C420CFB00582D15 /* 消息通知 */,
-				BC43FC931C420CEE00582D15 /* 发现 */,
 				BC43FC921C420CDB00582D15 /* 首页 */,
 				BCE25B381C41EAEB00C514AF /* lib */,
+				BC43FD991C45E19300582D15 /* NavigationController */,
+				BC43FD981C45E17300582D15 /* TabBarController */,
+				BC43FD9A1C45E1B200582D15 /* NewUserGuideController */,
 				BCD9A6F31C412C2B0040A19C /* AppDelegate.h */,
 				BCD9A6F41C412C2B0040A19C /* AppDelegate.m */,
-				BC43FCDF1C424C4900582D15 /* FTabBarController.h */,
-				BC43FCE01C424C4900582D15 /* FTabBarController.m */,
-				BC624DA31C434FB2006E5E49 /* FNavigationController.h */,
-				BC624DA41C434FB2006E5E49 /* FNavigationController.m */,
 				BCD9A6F61C412C2B0040A19C /* ViewController.h */,
 				BCD9A6F71C412C2B0040A19C /* ViewController.m */,
 				BCD9A6F91C412C2B0040A19C /* Main.storyboard */,
@@ -923,10 +997,15 @@
 				BC43FCCA1C42485000582D15 /* CYButtonFactory.m in Sources */,
 				BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */,
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
+				BCC8041C1C4CE1FB007EE5E2 /* HomeProductViewController.m in Sources */,
 				BC43FD0F1C42A13D00582D15 /* HomeCell.m in Sources */,
+				BC5526531C4F68BE001DDDF9 /* ProductMediaItemCell.m in Sources */,
+				BC43FD9D1C45E21300582D15 /* NewUserGuideController.m in Sources */,
 				BC43FD8E1C448F2800582D15 /* HomePageViewController.m in Sources */,
+				BC40C9A91C4CC92F00707190 /* FHomeDetailModel.m in Sources */,
 				BC43FCE41C424C9A00582D15 /* HomeViewController.m in Sources */,
 				BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */,
+				BC43FD961C45457E00582D15 /* FHomeModel.m in Sources */,
 				BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */,
 				BCD9A6F21C412C2A0040A19C /* main.m in Sources */,
 				BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */,
@@ -936,10 +1015,13 @@
 				BC43FCF01C424D3C00582D15 /* PhotoViewController.m in Sources */,
 				BC81DB711C43EBC8007DCA93 /* MessageCell.m in Sources */,
 				BC43FCD71C42485000582D15 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				BC8CB8631C47E4B800259BEA /* PushControllerTransition.m in Sources */,
 				BC43FCD01C42485000582D15 /* MASCompositeConstraint.m in Sources */,
 				BC43FCCE1C42485000582D15 /* UIView+HYBUIViewCommon.m in Sources */,
+				BC43FD931C44ADCF00582D15 /* TitleLabel.m in Sources */,
 				BC43FD0B1C429BB700582D15 /* FAppModel.m in Sources */,
 				BC43FCCD1C42485000582D15 /* HYBPageControl.m in Sources */,
+				BC8CB8661C47E6B800259BEA /* HomeDetailViewController.m in Sources */,
 				BC43FCCB1C42485000582D15 /* HYBLoadImageView.m in Sources */,
 				BC43FCD21C42485000582D15 /* MASConstraintMaker.m in Sources */,
 				BC43FCED1C424CEE00582D15 /* UserViewController.m in Sources */,
@@ -948,10 +1030,12 @@
 				BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */,
 				BC43FCE71C424CCD00582D15 /* DiscoverViewController.m in Sources */,
 				BC43FCE11C424C4900582D15 /* FTabBarController.m in Sources */,
+				BC8CB86C1C47F0FF00259BEA /* TopWindow.m in Sources */,
 				BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */,
 				BC43FCD51C42485000582D15 /* MASViewConstraint.m in Sources */,
 				BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
+				BC5526501C4F3BC9001DDDF9 /* ProductListCell.m in Sources */,
 				BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */,
 				BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */,
 			);
@@ -1065,6 +1149,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
@@ -1081,7 +1166,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoodszzzzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -1093,6 +1178,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK",
@@ -1109,7 +1195,7 @@
 					"$(PROJECT_DIR)/FineGoods/lib/OneSDK/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoodszzzzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

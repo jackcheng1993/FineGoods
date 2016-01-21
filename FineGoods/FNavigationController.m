@@ -11,10 +11,7 @@
 
 @interface FNavigationController () {
     CGFloat _prevAlpha;
-    
 }
-
-
 
 @end
 
@@ -26,19 +23,37 @@
 }
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController type:(NSString *)type  {
-    
+   // self.view.userInteractionEnabled = YES;
     _prevAlpha = 1;
     //if (self = [super initWithRootViewController:rootViewController]) {
         if (self = [super initWithRootViewController:rootViewController]) {
             //self.navigationBar.backgroundColor =
             
-            self.navigationBar.barTintColor = [UIColor colorWithRed:251.0/255 green:51.0/255 blue:61.0/255 alpha:1];
+            self.navigationBar.barTintColor = [UIColor colorWithRed:255.0/255 green:83.0/255 blue:77.0/255 alpha:1];
             [self customNavigationBar:type];
             self.navigationBar.translucent = NO;
         }
     //}
     return self;
 }
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    UITouch *touch = touches.anyObject;
+    CGPoint touchPoint = [touch locationInView:self.view];
+    if (touchPoint.y <= 20) {
+        [self scrollToTop:self.scrollView];
+    }
+}
+
+- (void)scrollToTop:(UIScrollView *)scrollView {
+    //self.scrollView  = scrollView;
+    CGFloat offsetY = scrollView.contentOffset.y;
+    offsetY = 0;
+    scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, 0);
+}
+
 
 //- (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
 //    if (self = [super initWithRootViewController:rootViewController]) {

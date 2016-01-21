@@ -49,8 +49,8 @@ static char UIScrollVIewNavigation;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGPoint offSet = scrollView.contentOffset;
-    if (offSet.y < 200) {
-        CGFloat alpha = offSet.y/200*1.0;
+    if (offSet.y < 136) {
+        CGFloat alpha = offSet.y/136*1.0;
         if (self.NDelegate&&[self.NDelegate respondsToSelector:@selector(changeTransparency:)]) {
             [self.NDelegate changeTransparency:alpha];
         }

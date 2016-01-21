@@ -10,13 +10,6 @@
 #import "Define.h"
 
 @interface HomeCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *tagImage;
-
-@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *loveLabel;
 
 @end
 
@@ -28,6 +21,7 @@
 }
 
 - (void)UpdateWithModel:(FAppTopicModel *)topicModel index:(NSInteger)index{
+    self.topicModel = topicModel;
     if (index >= 5) self.tagImage.hidden = YES;
     
     [self.iconImage sd_setImageWithURL:[NSURL URLWithString:topicModel.pic] placeholderImage:[UIImage imageNamed:@"Fplaceholder"]];

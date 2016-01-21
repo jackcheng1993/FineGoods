@@ -7,8 +7,22 @@
 //
 
 #import "HomePageViewController.h"
+#import "HomeCell.h"
+#import "NetWorkingManager.h"
+#import "FAppModel.h"
+#import "FHomeModel.h"
+#import "HomeViewController.h"
+#import "HomeDetailViewController.h"
 
-@interface HomePageViewController ()
+#define identifity @"HomeCell"
+#define LabelWidth 70
+
+@interface HomePageViewController () {
+     NSInteger _page;
+}
+
+@property (nonatomic , strong) NSMutableArray *dataArray;
+
 
 @end
 
@@ -16,41 +30,173 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //定制TableView
+    [self customTableView];
+    //初始时请求数据
+    //[self fetchDataFromNet:NO withRefreshHeader:nil];
+}
+
+//- (instancetype)init {
+//}
+
+- (void)customTableView {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.rowHeight = 204;
+    self.tableView.bounces = NO;
+   // self.tableView.frame = CGRectMake(0, 0, FScreenWidth, FScreenHeight-64);
+    self.tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, FScreenWidth, 244)];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeCell class]) bundle:nil] forCellReuseIdentifier:identifity];
+    //设置导航栏代理
+    FNavigationController<ChangeNavigationBarDelegate> *fNavigation = (FNavigationController<ChangeNavigationBarDelegate> *)self.navigationController;
+    self.tableView.NDelegate = fNavigation;
+    fNavigation.scrollView = self.tableView;
+    //设置刷新视图
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self fetchDataFromNet:NO withRefreshHeader:nil];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self fetchDataFromNet:YES withRefreshHeader:nil];
+    }];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
+    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if (self.delegate) {
+        [self.delegate changeTitleScllorViewY:self.tableView.mj_offsetY];
+    }
+}
+
+//- (NSString *)requestUrl {
+//    if (_requestUrl == nil) {
+//        if ([self.title isEqualToString:@"最新"]) {
+//            _requestUrl = [NSString stringWithFormat:FHomeUrl,(long)_page];
+//        }else {
+//            _requestUrl = [NSString stringWithFormat:FHomeCommonUrl,_sence];
+//        }
+//       
+//    }
+//    return _requestUrl;
+//}
+
+- (NSMutableArray *)dataArray {
+    if (_dataArray == nil) {
+        _dataArray = [[NSMutableArray alloc]init];
+    }
+    return _dataArray;
+}
+
+//&page=0&pagesize=20&
+- (void)fetchDataFromNet:(BOOL)isMore withRefreshHeader:(MJRefreshHeader *)refreshHeader {
+    if (isMore) _page++;
+    else _page = 0;
+    self.tableView.bounces=YES;
+    if ([self.title isEqualToString:@"最新"]) {
+        NSString *urlString = [NSString stringWithFormat:FHomeUrl,(long)_page];
+        [NetWorkingManager getRequestWithUrl:urlString parameters:nil pageType:FHomePage successBlock:^(id object) {
+            NSDictionary *dict = (NSDictionary *)object;
+            FAppModel *appModel = [[FAppModel alloc]initWithDictionary:dict error:nil];
+            if (!isMore) {
+                [self.dataArray removeAllObjects];
+                [self.tableView reloadData];
+
+                HomeViewController *homeContr = (HomeViewController *)self.parentViewController;
+                [homeContr updateLoopData:appModel.data.banner];
+            }
+            [_dataArray addObjectsFromArray:appModel.data.topic];
+            [self.tableView reloadData];
+            
+            isMore?[self.tableView.mj_footer endRefreshing]:[self.tableView.mj_header endRefreshing];
+        } failBlock:^(NSError *error) {
+            NSLog(@"%@",error);
+            isMore?[self.tableView.mj_footer endRefreshing]:[self.tableView.mj_header endRefreshing];
+        }];
+    }
+    else {
+        NSDictionary *parameters = @{@"page":@(_page),@"pagesize":@(20)};
+        NSString *urlString = [NSString stringWithFormat:FHomeCommonUrl,_sence];
+        [NetWorkingManager postRequestWithUrl:urlString parameters:parameters pageType:nil successBlock:^(id object) {
+          //  NSLog(@"dict %@",object);
+            FHomeModel *homeModel = [[FHomeModel alloc]initWithDictionary:object error:nil];
+          //NSLog(@"appmodel :%@",homeModel);
+            if (!isMore) {
+                [self.dataArray removeAllObjects];
+                [self.tableView reloadData];
+            }
+            
+            [self.dataArray addObjectsFromArray:homeModel.data];
+            [self.tableView reloadData];
+            isMore?[self.tableView.mj_footer endRefreshing]:[self.tableView.mj_header endRefreshing];
+            
+        } failBlock:^(NSError *error) {
+            NSLog(@"%@",error.localizedDescription);
+            isMore?[self.tableView.mj_footer endRefreshing]:[self.tableView.mj_header endRefreshing];
+        }];
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+}
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [super touchesBegan:touches withEvent:event];
+//    UITouch *touch = touches.anyObject;
+//    CGPoint touchPoint = [touch locationInView:self.view];
+//    if (touchPoint.y <= 20) {
+//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition: UITableViewScrollPositionTop animated:YES];
+//    }
+//}
+
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FAppTopicModel *topicModel = _dataArray[indexPath.row];
+    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifity];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell UpdateWithModel:topicModel index:indexPath.row];
+    return cell;
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    //self.iconImageView = cell.iconImage;
+//    HomeDetailViewController *detailContr = [[HomeDetailViewController alloc]init];
+//    detailContr.image = self.iconImageView.image;
+//   // self.navigationController.delegate = detailContr;
+//   // [self.navigationController pushViewController:detailContr animated:YES];
+//    if (self.delegate) {
+//        HomeViewController *viewContr = (HomeViewController *)self.delegate;
+//        viewContr.iconImageView = cell.iconImage;
+//        [self.delegate pushDetailController:detailContr];
+//    }
+//   
+//}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+   // scrollView.scrollEnabled = NO;
+   // NSLog(@"%lf",scrollView.mj_offsetY);
+    //NSLog(@"superView%lf",scrollView.superview.superview.mj_y);
+   // CGFloat offsetY = scrollView.mj_offsetY;
+//    NSLog(@"%lf",offsetY);
+//    if (offsetY < 200) {
+//        //self.tableView.superview.mj_y -= offsetY;
+//        scrollView.scrollEnabled = NO;
+//    }
+}
+
+-(void)dealloc {
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

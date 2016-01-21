@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FTabBarController.h"
+#import "TopWindow.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    [TopWindow show];
     FTabBarController *tabBarContr = [FTabBarController new];
     self.window.rootViewController = tabBarContr;
     [self.window makeKeyAndVisible];
