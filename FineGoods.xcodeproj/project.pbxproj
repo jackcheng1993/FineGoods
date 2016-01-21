@@ -43,9 +43,15 @@
 		BC5526531C4F68BE001DDDF9 /* ProductMediaItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5526521C4F68BE001DDDF9 /* ProductMediaItemCell.m */; };
 		BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA41C434FB2006E5E49 /* FNavigationController.m */; };
 		BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */; };
-		BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */; };
+		BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC624DD31C438D8D006E5E49 /* PopMenuView.m */; };
+		BC7DE4901C45021A00D1D460 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE48F1C45021A00D1D460 /* BaseViewController.m */; };
+		BC7DE4931C451CE600D1D460 /* LoveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */; };
+		BC7DE4961C451D6D00D1D460 /* NowTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */; };
+		BC7DE4991C451DE800D1D460 /* NewPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE4981C451DE800D1D460 /* NewPushViewController.m */; };
+		BC7DE49B1C452A7F00D1D460 /* NowTalkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */; };
+		BC7DE49F1C452AD300D1D460 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7DE49D1C452AD300D1D460 /* TestViewController.m */; };
+		BC7DE4A01C452AD300D1D460 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7DE49E1C452AD300D1D460 /* TestViewController.xib */; };
 		BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */; };
-		BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */; };
 		BC81DB711C43EBC8007DCA93 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB701C43EBC8007DCA93 /* MessageCell.m */; };
 		BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81DB731C43EBF1007DCA93 /* MessageModel.m */; };
 		BC81DB781C43EF7E007DCA93 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81DB771C43EF7E007DCA93 /* MessageCell.xib */; };
@@ -53,6 +59,11 @@
 		BC8CB8661C47E6B800259BEA /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB8651C47E6B800259BEA /* HomeDetailViewController.m */; };
 		BC8CB86C1C47F0FF00259BEA /* TopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8CB86B1C47F0FF00259BEA /* TopWindow.m */; };
 		BCC8041C1C4CE1FB007EE5E2 /* HomeProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8041B1C4CE1FB007EE5E2 /* HomeProductViewController.m */; };
+		BC9489A41C44A96B005D2C92 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */; };
+		BC9489A71C44AEC5005D2C92 /* PicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */; };
+		BC9489AA1C44B03C005D2C92 /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489A91C44B03C005D2C92 /* DiscoverModel.m */; };
+		BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */; };
+>>>>>>> 9d3f92fbc6618b5552695675880fae75417c9da5
 		BCD9A6F21C412C2A0040A19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F11C412C2A0040A19C /* main.m */; };
 		BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F41C412C2B0040A19C /* AppDelegate.m */; };
 		BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A6F71C412C2B0040A19C /* ViewController.m */; };
@@ -185,12 +196,22 @@
 		BC624DA41C434FB2006E5E49 /* FNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNavigationController.m; sourceTree = "<group>"; };
 		BC624DA71C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ChangeNavigationBar.h"; sourceTree = "<group>"; };
 		BC624DA81C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ChangeNavigationBar.m"; sourceTree = "<group>"; };
-		BC81DB571C43EA3A007DCA93 /* LoveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveHomeViewController.h; sourceTree = "<group>"; };
-		BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHomeViewController.m; sourceTree = "<group>"; };
+		BC624DD21C438D8D006E5E49 /* PopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenuView.h; sourceTree = "<group>"; };
+		BC624DD31C438D8D006E5E49 /* PopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuView.m; sourceTree = "<group>"; };
+		BC7DE48E1C45021A00D1D460 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		BC7DE48F1C45021A00D1D460 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BC7DE4911C451CE600D1D460 /* LoveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveHomeViewController.h; sourceTree = "<group>"; };
+		BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHomeViewController.m; sourceTree = "<group>"; };
+		BC7DE4941C451D6D00D1D460 /* NowTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowTalkViewController.h; sourceTree = "<group>"; };
+		BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowTalkViewController.m; sourceTree = "<group>"; };
+		BC7DE4971C451DE800D1D460 /* NewPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPushViewController.h; sourceTree = "<group>"; };
+		BC7DE4981C451DE800D1D460 /* NewPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPushViewController.m; sourceTree = "<group>"; };
+		BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowTalkViewController.xib; sourceTree = "<group>"; };
+		BC7DE49C1C452AD300D1D460 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		BC7DE49D1C452AD300D1D460 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		BC7DE49E1C452AD300D1D460 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		BC81DB591C43EA3A007DCA93 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		BC81DB5B1C43EA3A007DCA93 /* NewPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPushViewController.h; sourceTree = "<group>"; };
-		BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPushViewController.m; sourceTree = "<group>"; };
 		BC81DB6F1C43EBC8007DCA93 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = FineGoods/Infomation/Models/MessageCell.h; sourceTree = SOURCE_ROOT; };
 		BC81DB701C43EBC8007DCA93 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = FineGoods/Infomation/Models/MessageCell.m; sourceTree = SOURCE_ROOT; };
 		BC81DB721C43EBF1007DCA93 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
@@ -204,6 +225,14 @@
 		BC8CB86B1C47F0FF00259BEA /* TopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopWindow.m; sourceTree = "<group>"; };
 		BCC8041A1C4CE1FB007EE5E2 /* HomeProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductViewController.h; sourceTree = "<group>"; };
 		BCC8041B1C4CE1FB007EE5E2 /* HomeProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductViewController.m; sourceTree = "<group>"; };
+		BC9489A21C44A96B005D2C92 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonTableViewCell.h; path = FineGoods/ButtonTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonTableViewCell.m; path = FineGoods/ButtonTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BC9489A51C44AEC5005D2C92 /* PicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PicTableViewCell.h; path = FineGoods/PicTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PicTableViewCell.m; path = FineGoods/PicTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		BC9489A81C44B03C005D2C92 /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
+		BC9489A91C44B03C005D2C92 /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		BC9489AB1C44E8A1005D2C92 /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopTableViewCell.h; path = FineGoods/Discover/Models/TopTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopTableViewCell.m; path = FineGoods/Discover/Models/TopTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		BCD9A6ED1C412C290040A19C /* FineGoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FineGoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9A6F11C412C2A0040A19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD9A6F31C412C2B0040A19C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -370,6 +399,7 @@
 		BC43FC941C420CFB00582D15 /* 消息通知 */ = {
 			isa = PBXGroup;
 			children = (
+				BC7DE48D1C4501F900D1D460 /* 基类 */,
 				BC43FC9C1C420E2000582D15 /* Controllers */,
 				BC43FC9D1C420E2000582D15 /* Models */,
 				BC43FC9E1C420E2100582D15 /* Views */,
@@ -445,6 +475,8 @@
 		BC43FC9A1C420DF600582D15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC9489A81C44B03C005D2C92 /* DiscoverModel.h */,
+				BC9489A91C44B03C005D2C92 /* DiscoverModel.m */,
 			);
 			name = Models;
 			path = Discover/Models;
@@ -453,6 +485,12 @@
 		BC43FC9B1C420DF600582D15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC9489A21C44A96B005D2C92 /* ButtonTableViewCell.h */,
+				BC9489A31C44A96B005D2C92 /* ButtonTableViewCell.m */,
+				BC9489A51C44AEC5005D2C92 /* PicTableViewCell.h */,
+				BC9489A61C44AEC5005D2C92 /* PicTableViewCell.m */,
+				BC9489AB1C44E8A1005D2C92 /* TopTableViewCell.h */,
+				BC9489AC1C44E8A1005D2C92 /* TopTableViewCell.m */,
 			);
 			name = Views;
 			path = Discover/Views;
@@ -461,12 +499,18 @@
 		BC43FC9C1C420E2000582D15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC81DB571C43EA3A007DCA93 /* LoveHomeViewController.h */,
-				BC81DB581C43EA3A007DCA93 /* LoveHomeViewController.m */,
 				BC81DB591C43EA3A007DCA93 /* MessageViewController.h */,
 				BC81DB5A1C43EA3A007DCA93 /* MessageViewController.m */,
-				BC81DB5B1C43EA3A007DCA93 /* NewPushViewController.h */,
-				BC81DB5C1C43EA3A007DCA93 /* NewPushViewController.m */,
+				BC7DE4911C451CE600D1D460 /* LoveHomeViewController.h */,
+				BC7DE4921C451CE600D1D460 /* LoveHomeViewController.m */,
+				BC7DE4941C451D6D00D1D460 /* NowTalkViewController.h */,
+				BC7DE4951C451D6D00D1D460 /* NowTalkViewController.m */,
+				BC7DE49A1C452A7F00D1D460 /* NowTalkViewController.xib */,
+				BC7DE4971C451DE800D1D460 /* NewPushViewController.h */,
+				BC7DE4981C451DE800D1D460 /* NewPushViewController.m */,
+				BC7DE49C1C452AD300D1D460 /* TestViewController.h */,
+				BC7DE49D1C452AD300D1D460 /* TestViewController.m */,
+				BC7DE49E1C452AD300D1D460 /* TestViewController.xib */,
 			);
 			name = Controllers;
 			path = Infomation/Controllers;
@@ -644,8 +688,19 @@
 				BC43FD921C44ADCF00582D15 /* TitleLabel.m */,
 				BC8CB8611C47E4B800259BEA /* PushControllerTransition.h */,
 				BC8CB8621C47E4B800259BEA /* PushControllerTransition.m */,
+				BC624DD21C438D8D006E5E49 /* PopMenuView.h */,
+				BC624DD31C438D8D006E5E49 /* PopMenuView.m */,
 			);
 			path = CustomLIb;
+			sourceTree = "<group>";
+		};
+		BC7DE48D1C4501F900D1D460 /* 基类 */ = {
+			isa = PBXGroup;
+			children = (
+				BC7DE48E1C45021A00D1D460 /* BaseViewController.h */,
+				BC7DE48F1C45021A00D1D460 /* BaseViewController.m */,
+			);
+			name = "基类";
 			sourceTree = "<group>";
 		};
 		BCD9A6E41C412C260040A19C = {
@@ -887,7 +942,7 @@
 				TargetAttributes = {
 					BCD9A6EC1C412C290040A19C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = BMV8G2PZBP;
+						DevelopmentTeam = 52A42K7HEK;
 					};
 				};
 			};
@@ -915,6 +970,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE25B911C41EB1500C514AF /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				BC7DE49B1C452A7F00D1D460 /* NowTalkViewController.xib in Resources */,
 				BCE25B871C41EB1400C514AF /* UMShareEditViewControlleriPad.xib in Resources */,
 				BC43FCCF1C42485000582D15 /* Info.plist in Resources */,
 				BCE25B891C41EB1400C514AF /* UMSnsAccountViewController.xib in Resources */,
@@ -922,6 +978,7 @@
 				BCE25B841C41EB1400C514AF /* UMSCommentInputController.xib in Resources */,
 				BCE25B831C41EB1400C514AF /* UMSCommentDetailController.xib in Resources */,
 				BCD9A7001C412C2C0040A19C /* LaunchScreen.storyboard in Resources */,
+				BC7DE4A01C452AD300D1D460 /* TestViewController.xib in Resources */,
 				BCE25B961C41EB1500C514AF /* yw_1222.jpg in Resources */,
 				BCD9A6FD1C412C2C0040A19C /* Assets.xcassets in Resources */,
 				BC43FCF31C424F3E00582D15 /* controllers.plist in Resources */,
@@ -995,6 +1052,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC43FCCA1C42485000582D15 /* CYButtonFactory.m in Sources */,
+				BC7DE4931C451CE600D1D460 /* LoveHomeViewController.m in Sources */,
+				BC7DE4901C45021A00D1D460 /* BaseViewController.m in Sources */,
 				BCD9A6F81C412C2B0040A19C /* ViewController.m in Sources */,
 				BC43FCD61C42485000582D15 /* NSArray+MASAdditions.m in Sources */,
 				BCC8041C1C4CE1FB007EE5E2 /* HomeProductViewController.m in Sources */,
@@ -1004,11 +1063,13 @@
 				BC43FD8E1C448F2800582D15 /* HomePageViewController.m in Sources */,
 				BC40C9A91C4CC92F00707190 /* FHomeDetailModel.m in Sources */,
 				BC43FCE41C424C9A00582D15 /* HomeViewController.m in Sources */,
+				BC9489A41C44A96B005D2C92 /* ButtonTableViewCell.m in Sources */,
 				BCD9A6F51C412C2B0040A19C /* AppDelegate.m in Sources */,
 				BC43FD961C45457E00582D15 /* FHomeModel.m in Sources */,
 				BC81DB5E1C43EA3A007DCA93 /* MessageViewController.m in Sources */,
 				BCD9A6F21C412C2A0040A19C /* main.m in Sources */,
 				BC81DB5D1C43EA3A007DCA93 /* LoveHomeViewController.m in Sources */,
+				BC9489AA1C44B03C005D2C92 /* DiscoverModel.m in Sources */,
 				BC43FCD81C42485000582D15 /* View+MASAdditions.m in Sources */,
 				BC43FCD31C42485000582D15 /* MASLayoutConstraint.m in Sources */,
 				BC43FCD11C42485000582D15 /* MASConstraint.m in Sources */,
@@ -1023,9 +1084,12 @@
 				BC43FCCD1C42485000582D15 /* HYBPageControl.m in Sources */,
 				BC8CB8661C47E6B800259BEA /* HomeDetailViewController.m in Sources */,
 				BC43FCCB1C42485000582D15 /* HYBLoadImageView.m in Sources */,
+				BC7DE4961C451D6D00D1D460 /* NowTalkViewController.m in Sources */,
 				BC43FCD21C42485000582D15 /* MASConstraintMaker.m in Sources */,
+				BC7DE4991C451DE800D1D460 /* NewPushViewController.m in Sources */,
 				BC43FCED1C424CEE00582D15 /* UserViewController.m in Sources */,
 				BC624DA51C434FB2006E5E49 /* FNavigationController.m in Sources */,
+				BC7DE49F1C452AD300D1D460 /* TestViewController.m in Sources */,
 				BC43FCD91C42485000582D15 /* ViewController+MASAdditions.m in Sources */,
 				BC624DA91C434FD4006E5E49 /* UIScrollView+ChangeNavigationBar.m in Sources */,
 				BC43FCE71C424CCD00582D15 /* DiscoverViewController.m in Sources */,
@@ -1033,10 +1097,13 @@
 				BC8CB86C1C47F0FF00259BEA /* TopWindow.m in Sources */,
 				BC43FD081C428C0100582D15 /* NetWorkingManager.m in Sources */,
 				BC43FCD51C42485000582D15 /* MASViewConstraint.m in Sources */,
+				BC9489A71C44AEC5005D2C92 /* PicTableViewCell.m in Sources */,
 				BC43FCCC1C42485000582D15 /* HYBLoopScrollView.m in Sources */,
+				BC9489AD1C44E8A1005D2C92 /* TopTableViewCell.m in Sources */,
 				BC43FCD41C42485000582D15 /* MASViewAttribute.m in Sources */,
 				BC5526501C4F3BC9001DDDF9 /* ProductListCell.m in Sources */,
 				BC81DB5F1C43EA3A007DCA93 /* NewPushViewController.m in Sources */,
+				BC624DD41C438D8D006E5E49 /* PopMenuView.m in Sources */,
 				BC81DB741C43EBF1007DCA93 /* MessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1149,6 +1216,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1167,7 +1235,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoodszzzzz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -1178,6 +1248,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1196,7 +1267,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoodszzzzz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aili.FineGoods1111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

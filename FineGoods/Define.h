@@ -21,6 +21,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
 #import "Masonry.h"  //约束
 #import "HYBLoopScrollView.h" //滚动视图
 

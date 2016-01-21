@@ -24,7 +24,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier index:(NSInteger)index{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        //NSLog(<#NSString * _Nonnull format, ...#>)
+        //
         self = [[NSBundle mainBundle] loadNibNamed:@"MessageCell" owner:self options:nil][index];
         //[self customViews];
     }

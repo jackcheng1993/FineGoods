@@ -1,22 +1,22 @@
 //
-//  LoveHomeViewController.m
+//  TestViewController.m
 //  FineGoods
 //
 //  Created by qianfeng on 16/1/12.
 //  Copyright © 2016年 Aili. All rights reserved.
 //
 
-#import "LoveHomeViewController.h"
+#import "TestViewController.h"
 
-@interface LoveHomeViewController ()
+@interface TestViewController ()
 
 @end
 
-@implementation LoveHomeViewController
+@implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

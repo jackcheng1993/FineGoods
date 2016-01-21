@@ -2,12 +2,12 @@
 //  NewPushViewController.h
 //  FineGoods
 //
-//  Created by qianfeng on 16/1/11.
+//  Created by qianfeng on 16/1/12.
 //  Copyright © 2016年 Aili. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface NewPushViewController : UIViewController
-@property (nonatomic, copy) NSString *Ntitle;
+@interface NewPushViewController : BaseViewController
+
 @end
