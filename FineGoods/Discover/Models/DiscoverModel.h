@@ -40,7 +40,7 @@
 @interface ElementsModel : JSONModel
 @property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSArray<buttonModel> *elements;
+@property (nonatomic, strong) NSMutableArray<buttonModel> *elements;
 @end
 
 @protocol AttionGroupModel

@@ -57,7 +57,11 @@
         DiscoverModel *_model = [[DiscoverModel alloc] initWithDictionary:dict error:nil];
         
         _dataSource = _model.data.rec_groups;
-        _buttonSource = _model.data.module_elements                                                                                                                                      ;
+        _buttonSource = _model.data.module_elements;
+       
+//        NSIndexPath *indexPath  =[NSIndexPath indexPathForRow:0 inSection:0];
+//        ButtonTableViewCell *buttonCell = [_tableView cellForRowAtIndexPath:indexPath];
+//        [buttonCell updateWithModel:_model.data.module_elements];
         
         [_tableView reloadData];
 
@@ -66,9 +70,6 @@
     }];
     
 }
-
-
-
 
 
 - (void)createTableView {
@@ -88,7 +89,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return FScreenWidth/2+40;
+        return FScreenWidth/2+50;
     }else{
     return FScreenWidth/2;
     }
@@ -102,7 +103,7 @@
         if (cell == nil) {
             cell = [[ButtonTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        
+        [cell updateWithModel:_buttonSource];
         return cell;
     }
    
@@ -121,7 +122,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier2];
     }
-    //cell.model = _mutableArray[indexPath.row];
+  
     
     return cell;
 }
