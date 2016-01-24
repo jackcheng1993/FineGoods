@@ -14,6 +14,7 @@
 #import "MessageCell.h"
 #import "MessageModel.h"
 #import "NetWorkingManager.h"
+#import "NewWebViewController.h"
 @interface MessageViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -160,8 +161,13 @@
     }else if (1 == indexPath.section){
         MessageModel *model = _dataArray[indexPath.section][indexPath.row];
         if ([model.type isEqualToString:@"webview"]) {
+            NSString *url = model.extend;
             
-            
+            NewWebViewController *webView = [[NewWebViewController alloc]initWithUrlString:url];
+            webView.hidesBottomBarWhenPushed = YES;
+        
+            webView.nTitle = model.title;
+             [self.navigationController pushViewController:webView animated:YES];
         }
 //        if ([model.extend isEqualToString:@"835"]) {
 //            

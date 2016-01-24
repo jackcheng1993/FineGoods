@@ -12,6 +12,8 @@
 
 @interface ButtonTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) buttonModel *model;
+//@property (nonatomic, strong) ElementsModel *model;
+
+-(void)updateWithModel:(NSArray *)buttonSource;
 
 @end

@@ -12,6 +12,7 @@
 
 
 
+
 @interface ButtonTableViewCell ()< UIScrollViewDelegate> {
     UIImageView *_buttonImageView;
     UILabel *_buttonTitle;
@@ -38,6 +39,12 @@
     NSArray *_dataArray;
     
     CGFloat _point;
+    
+    NSMutableArray *_buttons;
+    NSMutableArray *_texts;
+    NSMutableArray *_hotNums;
+    
+    
 }
 
 
@@ -66,15 +73,41 @@
         [self createSmallScrollView];
         [self addTitleButton];
         [self addButton8];
-    
 }
 
-- (void)setModel:(buttonModel *)model {
-    _model = model;
-    [_buttonImageView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
-    _buttonTitle.text = model.title;
-    _buttonNumber.text = model.sub_title;
-    
+
+- (void)updateWithModel:(NSArray *)buttonSource {
+    int a = 999;
+    int b = 1039;
+    int c = 1099;
+    for (NSInteger i = 0; i < buttonSource.count; i++) {
+            ElementsModel *elementModel = buttonSource[i];
+            for (NSInteger j = 0; j<elementModel.elements.count; j++) {
+                buttonModel *buttonModel = elementModel.elements[j];
+                
+                a++;
+                b++;
+                c++;
+                
+                UIButton *button = (UIButton *)[self.contentView viewWithTag:a];
+                UILabel *titleLabel = (UILabel *)[self.contentView viewWithTag:b];
+                UILabel *Numlabel = (UILabel *)[self.contentView viewWithTag:c];
+                
+                [button sd_setBackgroundImageWithURL:[NSURL URLWithString:buttonModel.photo] forState:UIControlStateNormal];
+                
+                titleLabel.text = buttonModel.title;
+                titleLabel.font = [UIFont systemFontOfSize:15];
+                titleLabel.adjustsFontSizeToFitWidth = YES;
+                titleLabel.textAlignment = NSTextAlignmentCenter;
+                titleLabel.textColor = [UIColor grayColor];
+                
+                Numlabel.text = buttonModel.sub_title;
+                Numlabel.font = [UIFont systemFontOfSize:13];
+                Numlabel.adjustsFontSizeToFitWidth = YES;
+                Numlabel.textAlignment = NSTextAlignmentCenter;
+                Numlabel.textColor = [UIColor lightGrayColor];
+            }
+        }
 }
 
 
@@ -118,35 +151,93 @@
 }
 
 - (void)addButton8 {
+    _buttons = [NSMutableArray new];
+    _texts = [NSMutableArray new];
+    _hotNums = [NSMutableArray new];
+    
+    int n = 999;
+    int t = 1039;
+    int h = 1099;
+    
     for (int i = 0; i < _nameArray.count ; i++) {
         
-        for (int k = 0; k <= 7; k++) {
+        for (int k = 0 ; k <= 7; k++) {
+            
             UIButton *_btn = [[UIButton alloc] init];
+            
+            UILabel *_text = [[UILabel alloc] init];
+            
+            UILabel *_hotNum = [[UILabel alloc] init];
+            
             if (k/4 == 0) {
-                _btn.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, FScreenWidth/6);
-                _btn.center = CGPointMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), FScreenWidth/8);
-                _btn.layer.cornerRadius = FScreenWidth/6/2;
-                _btn.layer.masksToBounds = YES;
-             
-                [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIImageRenderingModeAutomatic];
-                [_bigScrollView addSubview:_btn];
                 
+                n++;
+                t++;
+                h++;
+                
+                _btn.tag = n;
+                _text.tag = t;
+                _hotNum.tag = h;
+                
+                _btn.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/7, FScreenWidth/7);
+                _text.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, 20);
+                _hotNum.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, 20);
+                
+                
+                _btn.center = CGPointMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), FScreenWidth/8);
+                _text.center =  CGPointMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), FScreenWidth/8-FScreenWidth/10);
+                _hotNum.center = CGPointMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), FScreenWidth/8+FScreenWidth/10);
+                
+                _btn.layer.cornerRadius = FScreenWidth/7/2;
+                _btn.layer.masksToBounds = YES;
+                
+                [_bigScrollView addSubview:_btn];
+                [_bigScrollView addSubview:_text];
+                [_bigScrollView addSubview:_hotNum];
+                
+                 [_btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+                [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIControlStateNormal];
+                [_buttons addObject:_btn];
                 
             }else if (k/4 > 0){
-                _btn.frame = CGRectMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 60*2, FScreenWidth/6, FScreenWidth/6);
+                
+                n++;
+                t++;
+                h++;
+                
+                _text.tag = t;
+                _btn.tag = n;
+                _hotNum.tag = h;
+                
+                _btn.frame = CGRectMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 60*2, FScreenWidth/7, FScreenWidth/7);
+                _text.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, 20);
+                _hotNum.frame = CGRectMake(FScreenWidth/8*(2*k+1)+i*(FScreenWidth), 60, FScreenWidth/6, 20);
+                
                 _btn.center = CGPointMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 3*FScreenWidth/8);
-                _btn.layer.cornerRadius = FScreenWidth/6/2;
+                _text.center =  CGPointMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 3*FScreenWidth/8-FScreenWidth/10);
+                _hotNum.center = CGPointMake(FScreenWidth/8*(2*(k-4)+1)+i*(FScreenWidth), 3*FScreenWidth/8+FScreenWidth/10);
+                
+                _btn.layer.cornerRadius = FScreenWidth/7/2;
                 _btn.layer.masksToBounds = YES;
                 
+                [_bigScrollView addSubview:_text];
+                [_bigScrollView addSubview:_hotNum];
+                [_bigScrollView addSubview:_btn];
                 
+                [_btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIControlStateNormal];
-                
+                [_buttons addObject:_btn];
             }
-            
-            [_bigScrollView addSubview:_btn];
+
         }
         
     }
+    
+}
+
+- (void)buttonAction:(UIButton *)button{
+    NSLog(@"%ld",button.tag);
+
 }
 
 - (void)addTitleButton {

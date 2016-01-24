@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -16,12 +16,14 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gap-ez-LP2">
                         <rect key="frame" x="0.0" y="0.0" width="325" height="158"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="158" id="eak-sk-epV"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESQ-Gu-uF7">
                         <rect key="frame" x="0.0" y="159" width="325" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="os3-Tf-44W"/>
                         </constraints>
@@ -31,6 +33,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mp-yc-IQF">
                         <rect key="frame" x="135" y="185" width="56" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="21g-Ar-8O3"/>
                             <constraint firstAttribute="width" constant="56" id="kI1-jG-Mbw"/>
@@ -41,6 +44,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newtag" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-Xs-QNW">
                         <rect key="frame" x="0.0" y="0.0" width="45" height="19"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="Gf9-19-lmH"/>
                             <constraint firstAttribute="height" constant="19" id="hir-nu-6hH"/>
@@ -48,12 +52,14 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="D3Y-8V-vvD">
                         <rect key="frame" x="115" y="185" width="15" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="IWI-qH-JeJ"/>
                             <constraint firstAttribute="height" constant="15" id="UJP-UQ-Tne"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="K5K-Xs-QNW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Lzk-IR-AJL"/>
                     <constraint firstItem="gap-ez-LP2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RGH-mO-2c2"/>
@@ -69,6 +75,7 @@
                     <constraint firstItem="K5K-Xs-QNW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zu6-pm-NBb"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="iconImage" destination="gap-ez-LP2" id="3yI-cV-43o"/>
                 <outlet property="loveLabel" destination="1Mp-yc-IQF" id="Wvr-s1-9np"/>

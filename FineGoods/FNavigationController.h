@@ -18,5 +18,7 @@ typedef void(^ChangeTransparencyBlock)(CGFloat);
 @interface FNavigationController : UINavigationController <ChangeNavigationBarDelegate>
 @property (nonatomic, copy) ChangeTransparencyBlock changeTansparencyBlock;
 
+@property (nonatomic,strong)UIScrollView *scrollView;
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController type:(NSString *)type;// changeTransparencyBlock:(ChangeTransparencyBlock)changeTransparencyBlock;
 @end

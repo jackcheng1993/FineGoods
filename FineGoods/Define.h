@@ -14,11 +14,14 @@
 #define  FTabBarHeight 49
 #define  FScreenWidth [UIScreen mainScreen].bounds.size.width
 #define  FScreenHeight [UIScreen mainScreen].bounds.size.height
+#define  FBaseColor [UIColor colorWithRed:1.0 green:83/255.0 blue:77/255.0 alpha:1.0]
+
 
 #pragma mark - 第三方库
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
 #import "Masonry.h"  //约束
 #import "HYBLoopScrollView.h" //滚动视图
 
@@ -32,6 +35,16 @@
 
 
 #pragma mark - 请求Url
+//最新页面数据 GET
 #define FHomeUrl @"http://open3.bantangapp.com/recommend/index?app_installtime=1452331892.334167&app_versions=5.3&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&device_token=fcd81a592076bcf8880783024f734f690128cf6722f1f54883a256273364722d&oauth_token=a685e481eb1d56727a9c8503ae879781&os_versions=9.2&page=%ld&pagesize=20&screensize=750&track_deviceid=B884FCB9-2C81-448D-82F4-A28AC8CE7034&track_user_id=1769058&v=10"
+
+//#define FHomeUrl  @"http://open3.bantangapp.com/topic/list?client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&page=%ld&pagesize=20&scene=3&track_deviceid=D500D036-1242-41A1-9F50-5D8F0789DD32&track_user_id=1768988"
+//除了最新页面 其它页面数据 POST
+#define FHomeCommonUrl @"http://open3.bantangapp.com/topic/list?client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&scene=%@"
+//拼接图片
+#define FHomeDetailImageUrl @"http://bt.img.17gwx.com/%@"
+
+#define FHomeDetailUrl @"http://open3.bantangapp.com/topic/newInfo?client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&id=%@&track_deviceid=D500D036-1242-41A1-9F50-5D8F0789DD32&track_user_id=1768988"
+
 
 #endif /* Define_h */
