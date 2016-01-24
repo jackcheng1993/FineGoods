@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeBannerProductDetailVC : UIViewController
+@property (nonatomic, copy)NSString *urlString;
+@property (nonatomic, copy)NSString *newsId;
+
+- (instancetype)initWithNewID:(NSString *)newsId;
 
 @end

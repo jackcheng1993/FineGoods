@@ -97,11 +97,15 @@
 }
 
 - (void)likeBtnClicked:(UIButton *)btn {
-    
+    if (self.likeBtnClickedBlock) {
+        self.likeBtnClickedBlock(self.productModel);
+    }
 }
 
 - (void)buyBtnClicked:(UIButton *)btn {
-
+    if (self.buyBtnClickedBlock) {
+        self.buyBtnClickedBlock(self.productModel);
+    }
 }
 
 - (void)setProductModel:(FHomeDetailProductModel *)productModel index:(NSInteger)index {
@@ -110,8 +114,8 @@
         return;
     }
     
-  //  NSString *tapImgName = [NSString stringWithFormat:@"tag13"];
-     NSString *tapImgName = @"tg13";
+    NSString *tapImgName = [NSString stringWithFormat:@"tg%ld",(long)index];
+   // NSString *tapImgName = @"tg13";
     self.tagImgView.image = [UIImage imageNamed:tapImgName];
     
     self.titleLabel.text = _productModel.title;
@@ -207,13 +211,6 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 5.0;
 }
-
-
-
-
-
-
-
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

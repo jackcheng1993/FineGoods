@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FHomeBannerModel.h"
+#import "Define.h"
+
 
 @interface TopicTypeCCell : UICollectionViewCell
+
+@property (nonatomic, strong)FHomeBannerDataModel *dataModel;
+@property (strong, nonatomic) UIImageView *avaterImgView,*likeImgView;
+@property (strong, nonatomic) UILabel *nameLabel,*likeNumLabel;
+
++ (CGFloat)cellHeight;
 
 @end

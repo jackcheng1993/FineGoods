@@ -9,5 +9,16 @@
 #import "FHomeBannerModel.h"
 
 @implementation FHomeBannerModel
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
+
+@end
+
+
+@implementation FHomeBannerDataModel
++(BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
 
 @end

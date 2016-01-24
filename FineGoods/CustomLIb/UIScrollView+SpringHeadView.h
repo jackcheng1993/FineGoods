@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIScrollView (SpringHeadView)
+//headView 的高度
+#define SpringHeadViewHeight 200
+
+@interface UIScrollView (SpringHeadView)<UIScrollViewDelegate>
+
+//在分类增加了属性，这个是利用runtime实现的
+@property (nonatomic, weak) UIView *topView;
+- (void)addSpringHeadView:(UIView *)view;
 
 @end

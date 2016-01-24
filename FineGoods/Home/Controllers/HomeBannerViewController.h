@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeBannerViewController : UIViewController
+@property (nonatomic, copy)NSString *extends;
+@property (nonatomic, strong) UIImageView *iconImageView;
 
+- (instancetype)initWithType:(NSString *)type;
 @end

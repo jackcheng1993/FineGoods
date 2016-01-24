@@ -13,6 +13,7 @@
 #import "TitleLabel.h"
 #import "HomePageViewController.h"
 #import "HomeDetailViewController.h"
+#import "HomeBannerViewController.h"
 
 #define identifity @"HomeCell"
 #define LabelWidth 60
@@ -59,7 +60,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     //新手指引
-    [self newUserGuide];
+    //[self newUserGuide];
     //初始化数据源
     [self initData];
     //布局场景
@@ -126,26 +127,16 @@
     [self.view addSubview:_mainScrollView];
     //添加子视图控制器
     [self addChildControllers];
-     //设置导航栏代理
-    
-    //__weak typeof(self) weakSelf;
-    //添加刷新控件及事件
-//    _mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        NSInteger idx = _mainScrollView.mj_offsetX/FScreenWidth;
-//        HomePageViewController *pageContr = self.childViewControllers[idx];
-//        [pageContr fetchDataFromNet:NO withRefreshHeader:_mainScrollView.mj_header];
-//    }];
     
     //banner 滚动视图
     _loopScrollView = [HYBLoopScrollView loopScrollViewWithFrame:CGRectMake(0, 0, FScreenWidth, 200) imageUrls:@[@"Fplaceholder",@"Fplaceholder"] timeInterval:5.0 didSelect:^(NSInteger atIndex, HYBLoadImageView *sender) {
-       
+        [self bannerClicked:atIndex];
     } didScroll:NULL];
     _loopScrollView.alignment = kPageControlAlignCenter;
-    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(LoopPanGesture:)];
-    [_loopScrollView addGestureRecognizer:pangesture];
+//    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(LoopPanGesture:)];
+//    [_loopScrollView addGestureRecognizer:pangesture];
     [self.view addSubview:_loopScrollView];
-    //[self initLoopData];
-    
+
     //创建标题滚动视图
     _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, _loopScrollView.mj_h, FScreenWidth, TitleHeight)];
     _titleScrollView.backgroundColor = [UIColor whiteColor];
@@ -153,13 +144,6 @@
     [self.view addSubview:_titleScrollView];
    // [self.view bringSubviewToFront:_titleScrollView];
     [self addTitle];
-    
-    //创建内容滚动视图
-//    _contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_titleScrollView.frame), FScreenWidth, 10000)];
-//    _contentScrollView.contentSize = CGSizeMake(FScreenWidth*_pageArray.count, _contentScrollView.mj_h);
-//    _contentScrollView.pagingEnabled = YES;
-//    _contentScrollView.delegate = self;
-//    [_mainScrollView addSubview:_contentScrollView];
     
     //默认添加第一页
     [self addChildControllerViewAtIndex:0];
@@ -194,13 +178,6 @@
 
 #pragma mark - 设置banner的数据
 - (void)updateLoopData:(NSArray *)loopData {
-//    if (self.loopData) {
-//        [self.headArray removeAllObjects];
-//        __weak typeof(self) weakSelf;
-//        self.loopData = ^(NSArray *loopDate){
-//            [weakSelf.headArray addObjectsFromArray:loopData];
-//        };
-//    }
     
     [self.headArray removeAllObjects];
     [self.headArray addObjectsFromArray:loopData];
@@ -321,9 +298,6 @@
 // 设置下标的位置
 - (void)setUpUnderLine:(UILabel *)label
 {
-    // 获取文字尺寸
-   // CGRect titleBounds = [label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:label.font} context:nil];
-    
     CGFloat underLineH =2;
     
     self.underLine.mj_y = label.mj_h - underLineH;
@@ -341,7 +315,16 @@
         self.underLine.mj_w = 20;
         self.underLine.hyb_centerX = label.hyb_centerX;
     }];
-    
+}
+
+- (void)bannerClicked:(NSInteger)atIndex {
+ if (self.headArray.count>0) {
+        FAppBannerModel *bannerModel = self.headArray[atIndex];
+        HomeBannerViewController *bannerVC = [[HomeBannerViewController alloc]initWithType:bannerModel.type];
+     bannerVC.extends = bannerModel.extend;
+     bannerVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:bannerVC animated:YES];
+   }
 }
 
 #pragma mark - HomePageViewControllerDelegate
@@ -354,7 +337,6 @@
         _titleScrollView.mj_y = CGRectGetMaxY(_loopScrollView.frame);
     }
 }
-
 
 - (void)pushDetailController:(UIViewController *)viewController {
     HomeDetailViewController *detailContr = (HomeDetailViewController *)viewController;
@@ -373,31 +355,14 @@
     HomePageViewController *homePageContr = self.childViewControllers[i];
     UITableView *tableView = (UITableView *)homePageContr.view;
      CGFloat offsetY = - tableView.mj_offsetY;
-//    if (tableView.mj_offsetY < 136) {
-//        _loopScrollView.mj_y = offsetY;
-//        _titleScrollView.mj_y = CGRectGetMaxY(_loopScrollView.frame);
-//    }
-    //_tableView.contentOffset
-  //  NSLog(@"_titleScrollView %lf",_titleScrollView.mj_y);
-    
-//    if (_titleScrollView.mj_y > 64) {
-//        _loopScrollView.mj_y = offsetY;
-//        _titleScrollView.mj_y = CGRectGetMaxY(_loopScrollView.frame);
-//    }else if (_titleScrollView.mj_y <= 64 && tableView.mj_offsetY < 136){
-//        _loopScrollView.mj_y = offsetY;
-//        _titleScrollView.mj_y = CGRectGetMaxY(_loopScrollView.frame);
-//    }
     
     //设置其它子视图的偏移量
     [self setOffTableViewOffsetY:offsetY];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//      HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    NSLog(@"zzzzzz %@",cell.titleLabel.text);
     HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-   // FAppTopicModel *topicModel = _dataArray[indexPath.row];
-    
+   
     self.iconImageView = cell.iconImage;
     HomeDetailViewController *detailContr = [[HomeDetailViewController alloc]init];
     detailContr.image = self.iconImageView.image;
@@ -409,11 +374,6 @@
     detailContr.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:detailContr animated:YES];
-//        if (self.delegate) {
-//            HomeViewController *viewContr = (HomeViewController *)self.delegate;
-//            viewContr.iconImageView = cell.iconImage;
-//            [self.delegate pushDetailController:detailContr];
-//        }
 }
 
 - (void)setOffTableViewOffsetY:(CGFloat)offsetY {

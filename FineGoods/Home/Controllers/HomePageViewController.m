@@ -59,7 +59,6 @@
     }];
     
     [self.tableView.mj_header beginRefreshing];
-    //[self.tableView.mj_header beginRefreshing];
     [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 
@@ -68,18 +67,6 @@
         [self.delegate changeTitleScllorViewY:self.tableView.mj_offsetY];
     }
 }
-
-//- (NSString *)requestUrl {
-//    if (_requestUrl == nil) {
-//        if ([self.title isEqualToString:@"最新"]) {
-//            _requestUrl = [NSString stringWithFormat:FHomeUrl,(long)_page];
-//        }else {
-//            _requestUrl = [NSString stringWithFormat:FHomeCommonUrl,_sence];
-//        }
-//       
-//    }
-//    return _requestUrl;
-//}
 
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
@@ -139,14 +126,6 @@
     
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesBegan:touches withEvent:event];
-//    UITouch *touch = touches.anyObject;
-//    CGPoint touchPoint = [touch locationInView:self.view];
-//    if (touchPoint.y <= 20) {
-//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition: UITableViewScrollPositionTop animated:YES];
-//    }
-//}
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -159,34 +138,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell UpdateWithModel:topicModel index:indexPath.row];
     return cell;
-}
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    //self.iconImageView = cell.iconImage;
-//    HomeDetailViewController *detailContr = [[HomeDetailViewController alloc]init];
-//    detailContr.image = self.iconImageView.image;
-//   // self.navigationController.delegate = detailContr;
-//   // [self.navigationController pushViewController:detailContr animated:YES];
-//    if (self.delegate) {
-//        HomeViewController *viewContr = (HomeViewController *)self.delegate;
-//        viewContr.iconImageView = cell.iconImage;
-//        [self.delegate pushDetailController:detailContr];
-//    }
-//   
-//}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-   // scrollView.scrollEnabled = NO;
-   // NSLog(@"%lf",scrollView.mj_offsetY);
-    //NSLog(@"superView%lf",scrollView.superview.superview.mj_y);
-   // CGFloat offsetY = scrollView.mj_offsetY;
-//    NSLog(@"%lf",offsetY);
-//    if (offsetY < 200) {
-//        //self.tableView.superview.mj_y -= offsetY;
-//        scrollView.scrollEnabled = NO;
-//    }
 }
 
 -(void)dealloc {

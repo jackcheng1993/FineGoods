@@ -46,5 +46,8 @@
 
 #define FHomeDetailUrl @"http://open3.bantangapp.com/topic/newInfo?client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&id=%@&track_deviceid=D500D036-1242-41A1-9F50-5D8F0789DD32&track_user_id=1768988"
 
+#define FHomeBannerTopicUrl @"http://open3.bantangapp.com/topic/list?app_installtime=1453098684.851776&app_versions=5.3.1&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&ids=%@&oauth_token=58382b7fee3ae4f3eb65b33abdd7b276&os_versions=9.2&page=0&pagesize=20&screensize=640&track_deviceid=46EC3054-4CEB-4997-8956-173FD8FFD0F3&track_user_id=1807119"
+
+#define FHomeBannerProductUrl @"http://open3.bantangapp.com/product/list?client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=58382b7fee3ae4f3eb65b33abdd7b276&page=0&pagesize=20&track_deviceid=46EC3054-4CEB-4997-8956-173FD8FFD0F3&track_user_id=1807119&v=10&ids=%@"
 
 #endif /* Define_h */

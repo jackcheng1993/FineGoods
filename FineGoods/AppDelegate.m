@@ -26,6 +26,7 @@
     FTabBarController *tabBarContr = [FTabBarController new];
     tabBarContr.delegate = self;
     self.window.rootViewController = tabBarContr;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;

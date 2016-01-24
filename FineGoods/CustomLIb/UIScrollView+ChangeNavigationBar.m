@@ -27,14 +27,8 @@ static char UIScrollVIewNavigation;
     objc_setAssociatedObject(self, &UIScrollVIewNavigation, NDelegate, OBJC_ASSOCIATION_ASSIGN);
     
     [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    
-    
-    
 }
 
-//- (void)dealloc {
-//    
-//}
 
 - (id<ChangeNavigationBarDelegate>)NDelegate {
     return objc_getAssociatedObject(self, &UIScrollVIewNavigation);

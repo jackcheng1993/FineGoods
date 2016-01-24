@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BannerProductModel.h"
+#import "Define.h"
 @interface ProducTypeCCell : UICollectionViewCell
+@property (nonatomic, strong)BannerDataModel *dataModel;
 
++ (CGFloat)cellHeight;
 @end

@@ -73,9 +73,10 @@
         _prevAlpha = 0;
         self.navigationController.view.alpha = 0;
         self.navigationBar.alpha = 0;
+        controlller.title = @"良品";
         //controlller.navigationController.view.alpha = 0;
-        controlller.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchAction)];
-        controlller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"searchUser"] style:UIBarButtonItemStylePlain target:self action:@selector(searchUserAction)];
+       // controlller.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchAction)];
+      //  controlller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"searchUser"] style:UIBarButtonItemStylePlain target:self action:@selector(searchUserAction)];
         
     }
     if ([type isEqualToString:@"DiscoverViewController"]) {

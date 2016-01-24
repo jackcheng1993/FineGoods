@@ -10,4 +10,18 @@
 
 @implementation ProductNewsInfoModel
 
+- (instancetype)init {
+    if (self = [super init]) {
+        if (self.pic == nil) {
+            self.pic = [NSMutableArray new];
+        }
+    }
+    return self;
+}
 @end
+
+@implementation ProductNewsInfoPicModel
+
+@end
+
+

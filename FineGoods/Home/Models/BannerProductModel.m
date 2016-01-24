@@ -11,3 +11,8 @@
 @implementation BannerProductModel
 
 @end
+@implementation BannerDataModel
+
+@end
+
+
