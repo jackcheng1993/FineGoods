@@ -393,10 +393,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//      HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    NSLog(@"zzzzzz %@",cell.titleLabel.text);
+    
     HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-   // FAppTopicModel *topicModel = _dataArray[indexPath.row];
     
     self.iconImageView = cell.iconImage;
     HomeDetailViewController *detailContr = [[HomeDetailViewController alloc]init];
@@ -409,11 +407,8 @@
     detailContr.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:detailContr animated:YES];
-//        if (self.delegate) {
-//            HomeViewController *viewContr = (HomeViewController *)self.delegate;
-//            viewContr.iconImageView = cell.iconImage;
-//            [self.delegate pushDetailController:detailContr];
-//        }
+
+    
 }
 
 - (void)setOffTableViewOffsetY:(CGFloat)offsetY {
