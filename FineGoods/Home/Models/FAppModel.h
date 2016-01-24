@@ -122,6 +122,7 @@
 
 @property (nonatomic, copy) NSString<Optional> *sub_title;
 
+
 @property (nonatomic, copy) NSString *id;
 
 @property (nonatomic, copy) NSString *title;

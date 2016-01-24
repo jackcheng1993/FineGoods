@@ -363,6 +363,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
    
+    
+    
     self.iconImageView = cell.iconImage;
     HomeDetailViewController *detailContr = [[HomeDetailViewController alloc]init];
     detailContr.image = self.iconImageView.image;
@@ -374,6 +376,7 @@
     detailContr.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:detailContr animated:YES];
+
 }
 
 - (void)setOffTableViewOffsetY:(CGFloat)offsetY {

@@ -10,13 +10,14 @@
 #import "Define.h"
 #import "DiscoverModel.h"
 
-
+#import "CellDetaiViewController.h"
 
 
 @interface ButtonTableViewCell ()< UIScrollViewDelegate> {
     UIImageView *_buttonImageView;
     UILabel *_buttonTitle;
     UILabel *_buttonNumber;
+    UILabel *_buttonID;
 }
 
 @end
@@ -44,6 +45,10 @@
     NSMutableArray *_texts;
     NSMutableArray *_hotNums;
     
+    NSMutableArray *_btnIDs;
+    NSMutableArray *_tagIDs;
+    NSMutableArray *_btnTypes;
+   
     
 }
 
@@ -82,8 +87,9 @@
     int c = 1099;
     for (NSInteger i = 0; i < buttonSource.count; i++) {
             ElementsModel *elementModel = buttonSource[i];
+        
             for (NSInteger j = 0; j<elementModel.elements.count; j++) {
-                buttonModel *buttonModel = elementModel.elements[j];
+                buttonModel1 *buttonModel = elementModel.elements[j];
                 
                 a++;
                 b++;
@@ -95,14 +101,32 @@
                 
                 [button sd_setBackgroundImageWithURL:[NSURL URLWithString:buttonModel.photo] forState:UIControlStateNormal];
                 
+                NSString *type1 = @"post_list_element";
+                NSString *type2 = @"post_list_tag";
+                
+                
+                NSString *type = [NSString stringWithString:buttonModel.type];
+               
+           
+                NSRange range = [type rangeOfString:type1];
+                if (range.location == NSNotFound) {
+                    [_btnTypes addObject:type2];
+                }else {
+                    [_btnTypes addObject:type1];
+                }
+
+                
+                [_tagIDs addObject:buttonModel.extend];
+                [_btnIDs addObject:buttonModel.id];
+                
                 titleLabel.text = buttonModel.title;
-                titleLabel.font = [UIFont systemFontOfSize:15];
+                titleLabel.font = [UIFont systemFontOfSize:13];
                 titleLabel.adjustsFontSizeToFitWidth = YES;
                 titleLabel.textAlignment = NSTextAlignmentCenter;
                 titleLabel.textColor = [UIColor grayColor];
                 
                 Numlabel.text = buttonModel.sub_title;
-                Numlabel.font = [UIFont systemFontOfSize:13];
+                Numlabel.font = [UIFont systemFontOfSize:12];
                 Numlabel.adjustsFontSizeToFitWidth = YES;
                 Numlabel.textAlignment = NSTextAlignmentCenter;
                 Numlabel.textColor = [UIColor lightGrayColor];
@@ -154,6 +178,9 @@
     _buttons = [NSMutableArray new];
     _texts = [NSMutableArray new];
     _hotNums = [NSMutableArray new];
+    _btnIDs = [NSMutableArray new];
+    _tagIDs = [NSMutableArray new];
+    _btnTypes = [NSMutableArray new];
     
     int n = 999;
     int t = 1039;
@@ -195,7 +222,7 @@
                 [_bigScrollView addSubview:_text];
                 [_bigScrollView addSubview:_hotNum];
                 
-                 [_btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+                [_btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
                 [_btn setBackgroundImage:[UIImage imageNamed:@"Fplaceholder"] forState:UIControlStateNormal];
                 [_buttons addObject:_btn];
                 
@@ -235,8 +262,14 @@
     
 }
 
+
 - (void)buttonAction:(UIButton *)button{
     NSLog(@"%ld",(long)button.tag);
+    NSLog(@"%ld",button.tag);
+    
+    if (self.BtnClickedBlock) {
+        self.BtnClickedBlock(_btnIDs[button.tag-1000], _btnTypes[button.tag-1000],_tagIDs[button.tag-1000]);//id
+    }
 
 }
 
@@ -245,18 +278,22 @@
     _screenWidth = FScreenWidth/4;
     for (int i = 0; i < _nameArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
         button.frame = CGRectMake(_screenWidth*i, 0, _screenWidth, 35);
         [button setTitle:_nameArray[i] forState:UIControlStateNormal];
         button.tintAdjustmentMode = NSTextAlignmentCenter;
+        button.titleLabel.font = [UIFont systemFontOfSize:13];
+        
         [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         button.tag = 100 + i;
         [_smallScrollView addSubview:button];
         if (i == 0) {
             button.selected = YES;
             _button = button;
-            _button.transform = CGAffineTransformMakeScale(1.1, 1.1);
+            _button.transform = CGAffineTransformMakeScale(1.0, 1.0);
             _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(button.frame)-1, _screenWidth, 2)];
             _label.backgroundColor = [UIColor redColor];
             [_smallScrollView addSubview:_label];
@@ -272,7 +309,7 @@
     }
     button.selected = YES;
     _button.selected = NO;
-    _button.transform = CGAffineTransformMakeScale(1, 1);
+    _button.transform = CGAffineTransformMakeScale(1.0, 1.0);
     _button = button;
     _button.transform = CGAffineTransformMakeScale(1.0, 1.0);
     [UIView animateWithDuration:0.5 animations:^{

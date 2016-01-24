@@ -21,7 +21,7 @@
 @implementation ElementsModel
 @end
 
-@implementation buttonModel
+@implementation buttonModel1
 @end
 
 @implementation RecGroupsModel

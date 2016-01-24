@@ -9,10 +9,6 @@
 #import "HomeCell.h"
 #import "Define.h"
 
-@interface HomeCell ()
-
-@end
-
 @implementation HomeCell
 
 - (void)awakeFromNib {

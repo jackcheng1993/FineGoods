@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DisDetailViewController.h"
+
 #import "DiscoverModel.h"
+
+
+typedef void(^BtnClickedBlock)(NSString *btnid, NSString *btnType, NSString *tagid);
 
 @interface ButtonTableViewCell : UITableViewCell
 
-//@property (nonatomic, strong) ElementsModel *model;
+@property (nonatomic, copy) BtnClickedBlock BtnClickedBlock;
 
 -(void)updateWithModel:(NSArray *)buttonSource;
 

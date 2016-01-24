@@ -8,12 +8,16 @@
 
 #import "DiscoverViewController.h"
 #import "Define.h"
+
 #import "ButtonTableViewCell.h"
 #import "PicTableViewCell.h"
-#import <AFNetworking/AFNetworking.h>
-#import <UIImageView+WebCache.h>
-#import <MJRefresh/MJRefresh.h>
-#import "DiscoverViewController.h"
+
+#import "ButtonClickCell.h"
+#import "CellDetaiViewController.h"
+
+#import "DisDetailViewController.h"
+
+#import "DiscoverModel.h"
 
 @interface DiscoverViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
     UITableView *_tableView;
@@ -37,7 +41,15 @@
     self.view.backgroundColor = [UIColor redColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    UILabel *_title123 = [[UILabel alloc] init];
+    _title123.text = @"广场";
+    _title123.textColor = [UIColor whiteColor];
+    _title123.frame = CGRectMake(30, 30, 30, 30);
+    self.navigationItem.titleView = _title123;
+    
+    
     _dataSource = [[NSMutableArray alloc] init];
+    self.view.backgroundColor = FBaseColor;
 
     
     [self createTableView];
@@ -58,10 +70,6 @@
         
         _dataSource = _model.data.rec_groups;
         _buttonSource = _model.data.module_elements;
-       
-//        NSIndexPath *indexPath  =[NSIndexPath indexPathForRow:0 inSection:0];
-//        ButtonTableViewCell *buttonCell = [_tableView cellForRowAtIndexPath:indexPath];
-//        [buttonCell updateWithModel:_model.data.module_elements];
         
         [_tableView reloadData];
 
@@ -73,9 +81,10 @@
 
 
 - (void)createTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-FNavigationHeight-FTabBarHeight) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     [self.view addSubview:_tableView];
     
@@ -103,6 +112,17 @@
         if (cell == nil) {
             cell = [[ButtonTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
+        
+    
+        cell.BtnClickedBlock = ^(NSString *btnid, NSString *btnType, NSString *tagid){
+            DisDetailViewController *ddvc = [DisDetailViewController new];
+            ddvc.elementID = btnid;
+            ddvc.IntoType = btnType;
+            ddvc.tagID = tagid;
+            [self.navigationController pushViewController:ddvc animated:YES];
+            self.hidesBottomBarWhenPushed;
+        };
+        
         [cell updateWithModel:_buttonSource];
         return cell;
     }
@@ -113,29 +133,43 @@
         if (cell == nil) {
             cell = [[PicTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier1];
         }
+        
         cell.model = _dataSource[indexPath.row];
+    
         
         return cell;
     }
+    
+    
     static NSString *identifier2 = @"cellID2";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier2];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier2];
     }
-  
-    
     return cell;
 }
 //点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     NSLog(@"点击了%ld",(long)indexPath.row);
     
+//   DisDetailViewController *ddvc = [[DisDetailViewController alloc] init];  
+//   [self.navigationController pushViewController:ddvc animated:YES];
+    
+    CellDetaiViewController *cdvc = [[CellDetaiViewController alloc] init];
+    cdvc.hidesBottomBarWhenPushed = YES;
+    
+    RecGroupsModel *model1234 = _dataSource[indexPath.row];
+    
+    cdvc.groupid = model1234.id;
+    
+   
+    [self.navigationController pushViewController:cdvc animated:YES];
+         self.hidesBottomBarWhenPushed;
+    
+    
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

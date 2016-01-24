@@ -21,10 +21,10 @@
 @property (nonatomic, copy) NSString *update_time;
 @end
 
-@protocol buttonModel
+@protocol buttonModel1
 @end
 
-@interface buttonModel : JSONModel
+@interface buttonModel1 : JSONModel
 @property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *sub_title;
@@ -40,7 +40,7 @@
 @interface ElementsModel : JSONModel
 @property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSMutableArray<buttonModel> *elements;
+@property (nonatomic, strong) NSMutableArray<buttonModel1> *elements;
 @end
 
 @protocol AttionGroupModel
