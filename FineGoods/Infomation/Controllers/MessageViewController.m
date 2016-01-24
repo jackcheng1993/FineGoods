@@ -14,6 +14,7 @@
 #import "MessageCell.h"
 #import "MessageModel.h"
 #import "NetWorkingManager.h"
+#import "NewWebViewController.h"
 @interface MessageViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -159,20 +160,29 @@
         //[self presentViewController:nVC animated:YES completion:nil];
     }else if (1 == indexPath.section){
         MessageModel *model = _dataArray[indexPath.section][indexPath.row];
-        if ([model.extend isEqualToString:@"835"]) {
+        if ([model.type isEqualToString:@"webview"]) {
+            NSString *url = model.extend;
             
-            LoveHomeViewController *lHVC = [LoveHomeViewController new];
-            lHVC.extend = model.extend;
-            lHVC.nTitle = model.title;
-            [self.navigationController pushViewController:lHVC animated:YES];
-            //[self presentViewController:lHVC animated:YES completion:nil];
-        }else{
-            
-            NowTalkViewController *nVC = [[NowTalkViewController alloc]initWithNibName:NSStringFromClass([NowTalkViewController class]) bundle:nil];
-            nVC.extend = model.extend;
-            nVC.nTitle = @"本期话题";
-            [self.navigationController pushViewController:nVC animated:YES];
+            NewWebViewController *webView = [[NewWebViewController alloc]initWithUrlString:url];
+            webView.hidesBottomBarWhenPushed = YES;
+        
+            webView.nTitle = model.title;
+             [self.navigationController pushViewController:webView animated:YES];
         }
+//        if ([model.extend isEqualToString:@"835"]) {
+//            
+//            LoveHomeViewController *lHVC = [LoveHomeViewController new];
+//            lHVC.extend = model.extend;
+//            lHVC.nTitle = model.title;
+//            [self.navigationController pushViewController:lHVC animated:YES];
+//            //[self presentViewController:lHVC animated:YES completion:nil];
+//        }else{
+//            
+//            NowTalkViewController *nVC = [[NowTalkViewController alloc]initWithNibName:NSStringFromClass([NowTalkViewController class]) bundle:nil];
+//            nVC.extend = model.extend;
+//            nVC.nTitle = @"本期话题";
+//            [self.navigationController pushViewController:nVC animated:YES];
+//        }
     }
 }
 - (void)didReceiveMemoryWarning {
